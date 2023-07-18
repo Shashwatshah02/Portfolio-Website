@@ -15,9 +15,9 @@ export default function Footer() {
                 </Col>
                 <Col sm={6} className='text-center text-sm-end'>
                     <div className="social-icon">
-                    <a href="#"><img src={navIcon1} alt="" /></a>
-                    <a href="#"><img src={navIcon2} alt="" /></a>
-                    <a href="#"><img src={navIcon3} alt="" /></a>
+                    <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/"><img src={navIcon1} alt="" /></a>
+                    <a href="https://github.com/Shashwatshah02"><img src={navIcon2} alt="" /></a>
+                    <a href="https://www.instagram.com/shashwatshah02/"><img src={navIcon3} alt="" /></a>
                     </div>
                     <p>CopyRight @ 2023. Shashwat Shah (All Rights Reserved)</p>
                 </Col>

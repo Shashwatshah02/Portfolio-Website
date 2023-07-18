@@ -8,11 +8,7 @@ import TrackVisibility from "react-on-screen";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export default function Banner() {
-  const toRotate = [
-    "Web Developer",
-    "Photographer",
-    "Wordpress Website Developer",
-  ];
+  const toRotate = ["Web Developer", "Photographer", "Wordpress Developer"];
   const [loopNo, setLoopNo] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -54,26 +50,32 @@ export default function Banner() {
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
-            {({isVisible})=>
-            <div className={isVisible ? "animate__animated animate__fadeIn":""}>
-              <span className="tagline">Welcome to my Portfolio</span>
-              <h1>
-                {`Hi I'm Shashwat a, `} <span className="wrap">{text}</span>
-              </h1> 
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                aperiam neque reiciendis, nisi maiores accusantium consectetur
-                aut facilis, voluptates temporibus ipsam beatae fuga consequatur
-                dolor dignissimos tempora nam, recusandae alias.
-              </p>
-              <button
-                onClick={() => {
-                  document.getElementById("connect").scrollIntoView();
-                }}
-              >
-                Lets Connect <ArrowRightCircle size={25} />
-              </button>
-              </div>}
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>
+                    {`Hi I'm Shashwat a, `} <span className="wrap">{text}</span>
+                  </h1>
+                  <p>
+                    and a student at the DJ Sanghvi College of
+                    Engineering pursuing a degree in Computers,
+                    which allows me to explore my passion for technology and
+                    problem-solving. Apart from my academic pursuits, I am also
+                    a national-level skater. 
+                  </p>
+                  <button
+                    onClick={() => {
+                      document.getElementById("connect").scrollIntoView();
+                    }}
+                  >
+                    Lets Connect <ArrowRightCircle size={25} />
+                  </button>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>

@@ -49,9 +49,9 @@ export default function NavBar() {
         </Nav>
         <span className='navbar-text'>
             <div className="social-icon">
-                <a href="#"><img src={navIcon1} alt="" /></a>
-                <a href="#"><img src={navIcon2} alt="" /></a>
-                <a href="#"><img src={navIcon3} alt="" /></a>
+                <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/"><img src={navIcon1} alt="" /></a>
+                <a href="https://github.com/Shashwatshah02"><img src={navIcon2} alt="" /></a>
+                <a href="https://www.instagram.com/shashwatshah02/"><img src={navIcon3} alt="" /></a>
             </div>
         
         <button className="vvd"  onClick = {()=>{
