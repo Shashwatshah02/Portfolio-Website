@@ -8,7 +8,7 @@ import TrackVisibility from "react-on-screen";
 import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export default function Banner() {
-  const toRotate = ["Web Developer", "Photographer", "Wordpress Developer"];
+  const toRotate = ["Hi There! 👋'", "I am Shashwat Shah!'"];
   const [loopNo, setLoopNo] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -48,7 +48,7 @@ export default function Banner() {
     <section className="banner" id="home">
       <Container>
         <Row className="align-items-center">
-          <Col xs={12} md={6} xl={7}>
+          <Col xs={12} lg={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
@@ -58,27 +58,25 @@ export default function Banner() {
                 >
                   <span className="tagline">Welcome to my Portfolio</span>
                   <h1>
-                    {`Hi I'm Shashwat, a `} <span className="wrap">{text}</span>
+                    '<span className="wrap">{text}</span>
                   </h1>
                   <p>
-                    and a student at the DJ Sanghvi College of
-                    Engineering pursuing a degree in Computers,
-                    which allows me to explore my passion for technology and
-                    problem-solving. Apart from my academic pursuits, I am also
-                    a national-level skater. 
+                    I am currently pursuing a Bachelor's degree in Computer
+                    Science at Dwarkadas J. Sanghvi College of Engineering. With
+                    a current CGPA of 9.4/10, I have experience in Web/App
+                    Development, IOT and AIML. With multiple internships
+                   and research papers published, I'm a national-level artistic skater too.
                   </p>
-                  <button
-                    onClick={() => {
-                      document.getElementById("connect").scrollIntoView();
-                    }}
-                  >
-                    Lets Connect <ArrowRightCircle size={25} />
-                  </button>
+                  <a href="mailto:shashwatshah02@gmail.com">
+                    <button>
+                      Lets Connect <ArrowRightCircle size={25} />
+                    </button>
+                  </a>
                 </div>
               )}
             </TrackVisibility>
           </Col>
-          <Col xs={12} md={6} xl={5}>
+          <Col xs={12} lg={6} xl={5}>
             <img src={header} alt="Header-Image" className="header" />
           </Col>
         </Row>

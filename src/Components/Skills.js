@@ -18,11 +18,11 @@ export default function Skills() {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 600 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 600, min: 0 },
       items: 1,
     },
   };
@@ -34,40 +34,42 @@ export default function Skills() {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p>
-                I am a multi-talented individual working on projects related to C, Python, Web Dev, Ionic,
-                Flutter, along with that embracing the
-                exhilarating world of skating, captivating stage shows, engaging
-                skits, and the captivating artistry of photography, allowing me
-                to explore diverse avenues of self-expression and creativity.
+              Over the years, I’ve gained experience in a variety of fields, from UI/UX, web and app development to AI/ML and IoT. I also enjoy working on WordPress and Shopify for building user-friendly websites, and my creative side comes alive with photo and video editing. These skills reflect my passion for technology and creativity, and I’m always excited to learn and take on new challenges.
               </p>
               <Carousel
                 responsive={responsive}
                 infinite={true}
+                autoPlay={true} // Enables autoplay
+                autoPlaySpeed={2000} // S
                 className="skill-slider"
               >
                 <div className="item">
                   <img src={meter1} alt="Image" />
-                  <h5>Web Developement</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Wordpress</h5>
+                  <h5>Web Development</h5>
                 </div>
                 <div className="item">
                   <img src={meter3} alt="Image" />
-                  <h5>Photography</h5>
+                  <h5>App Development</h5>
+                </div>
+                <div className="item">
+                  <img src={meter2} alt="Image" />
+                  <h5>AI / ML</h5>
                 </div>
                 <div className="item">
                   <img src={meter1} alt="Image" />
-                  <h5>Cycling</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} alt="Image" />
-                  <h5>Skating</h5>
+                  <h5>Internet Of Things</h5>
                 </div>
                 <div className="item">
                   <img src={meter3} alt="Image" />
-                  <h5>Acting</h5>
+                  <h5>UI / UX Design</h5>
+                </div>
+                <div className="item">
+                  <img src={meter3} alt="Image" />
+                  <h5>Wordpress / Shopify</h5>
+                </div>
+                <div className="item">
+                  <img src={meter2} alt="Image" />
+                  <h5>Photo / Video Editing</h5>
                 </div>
               </Carousel>
             </div>

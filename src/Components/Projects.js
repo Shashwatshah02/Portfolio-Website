@@ -72,11 +72,7 @@ export default function Projects() {
           <Col size={12}>
             <h2>Projects</h2>
             <p>
-              I am a versatile individual immersed in the realms of web
-              development, where I create captivating online experiences.
-              Additionally, my passion for photography and expertise in
-              WordPress allow me to capture and showcase moments in visually
-              stunning ways.
+            Discover the fusion of creativity and technology in my projects, spanning web & app development, AI/ML, IoT, UI/UX design, WordPress/Shopify, and photo/video editing.
             </p>
             <Tab.Container id="project-tabs" defaultActiveKey="first">
               <Nav

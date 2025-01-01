@@ -19,7 +19,7 @@ export default function Footer() {
                     <a href="https://github.com/Shashwatshah02"><img src={navIcon2} alt="" /></a>
                     <a href="https://www.instagram.com/shashwatshah02/"><img src={navIcon3} alt="" /></a>
                     </div>
-                    <p>CopyRight @ 2023. Shashwat Shah (All Rights Reserved)</p>
+                    <p>CopyRight @ 2025. Shashwat Shah (All Rights Reserved)</p>
                 </Col>
             </Row>
         </Container>
