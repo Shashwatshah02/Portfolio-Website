@@ -1,0 +1,67 @@
+/* Container Styling */
+.bento-container {
+  padding: 20px;
+  background-color: #121212; /* Dark background for container */
+  color: #ffffff; /* Light text color */
+}
+
+/* Grid Container Styling */
+.bento-grid-container {
+  margin: 0 50px; /* Adjust spacing */
+  display: grid;
+  gap: 25px; /* Space between grid items */
+  grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for large screens */
+}
+
+/* Grid Item Styling */
+.bento-element {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6; /* Light border */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: auto; /* Allow height to grow dynamically */
+  word-wrap: break-word; /* Ensure text wraps properly */
+  overflow: hidden; /* Prevent content overflow */
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s ease, 
+              filter 0.3s ease; /* New transition: Slide & Blur Effect */
+}
+
+/* Responsive settings for smaller screens (mobile) */
+@media (max-width: 768px) {
+  .bento-grid-container {
+    grid-template-columns: 1fr !important; /* Single column for mobile */
+    gap: 10px; /* Reduce spacing between items */
+  }
+
+  .bento-element {
+    padding: 15px; /* Add padding for better spacing */
+    height: auto; /* Ensure height is dynamic */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 1200px) {
+  .bento-grid-container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+
+/* Hover effect on grid items with new slide and blur effect */
+.bento-element:hover {
+  transform: translateY(-10px); /* Slide the item upwards */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
+  filter: blur(1px); /* Slight blur effect */
+}
+
+/* Ensuring good background for elements */
+.bento-grid-container .bento-element {
+  background-color: #1e1e1e; /* Dark background for items */
+  color: #ffffff; /* Light text color */
+}

@@ -69,7 +69,7 @@ export default function Banner() {
                   </p>
                   <a href="mailto:shashwatshah02@gmail.com">
                     <button>
-                      Lets Connect <ArrowRightCircle size={25} />
+                      <span style={{display:'flex'}}>Lets Connect <ArrowRightCircle size={25} /></span>
                     </button>
                   </a>
                 </div>
