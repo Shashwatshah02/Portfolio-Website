@@ -1,67 +1,73 @@
 /* Container Styling */
 .bento-container {
   padding: 20px;
-  background-color: #121212; /* Dark background for container */
+  background-color: #121212; /* Dark background */
   color: #ffffff; /* Light text color */
+  box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
 /* Grid Container Styling */
 .bento-grid-container {
-  margin: 0 50px; /* Adjust spacing */
   display: grid;
-  gap: 25px; /* Space between grid items */
-  grid-template-columns: repeat(3, 1fr); /* Default to 3 columns for large screens */
+  padding: 0 200px !important;
+  gap: 20px; /* Spacing between items */
+  grid-template-columns: repeat(3, 1fr) !important; /* 3 columns by default */
+  margin: 0 auto; /* Center the grid */
+  box-sizing: border-box;
 }
 
 /* Grid Item Styling */
 .bento-element {
-  background-color: #ffffff;
+  background-color: #1e1e1e; /* Dark background for boxes */
+  color: #ffffff; /* Light text color */
   border: 1px solid #dee2e6; /* Light border */
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  padding: 10px;
+  border-radius: 8px; /* Smooth rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  padding: 15px;
   display: flex;
-  flex-direction: column; /* Stack content vertically */
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Vertical stacking */
+  justify-content: flex-start; /* Align content to the top */
+  align-items: center; /* Center horizontally */
   text-align: center;
-  height: auto; /* Allow height to grow dynamically */
-  word-wrap: break-word; /* Ensure text wraps properly */
-  overflow: hidden; /* Prevent content overflow */
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
-              box-shadow 0.3s ease, 
-              filter 0.3s ease; /* New transition: Slide & Blur Effect */
+  overflow: hidden; /* Prevent overflow */
+  word-wrap: break-word; /* Break long words */
+  overflow-wrap: anywhere; /* Additional safeguard for long unbroken text */
+  min-height: 100px; /* Ensure consistent height */
+  height: auto; /* Allow boxes to grow with content */
+  box-sizing: border-box; /* Include padding in size calculations */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsive settings for smaller screens (mobile) */
+/* Safeguard Long Text Overflow */
+.bento-element p {
+  margin: 0;
+  line-height: 1.5; /* Improve readability */
+  font-size: 14px; /* Ensure proper sizing for content */
+}
+
+/* Hover Effect */
+.bento-element:hover {
+  transform: translateY(-5px); /* Lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Responsive Design for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .bento-grid-container {
-    grid-template-columns: 1fr !important; /* Single column for mobile */
-    gap: 10px; /* Reduce spacing between items */
+    padding: 0 20px !important;
+    grid-template-columns: 1fr !important; /* Single column layout */
+    gap: 15px; /* Smaller spacing */
   }
 
   .bento-element {
-    padding: 15px; /* Add padding for better spacing */
-    height: auto; /* Ensure height is dynamic */
+    width: 100%; /* Full width for mobile */
   }
 }
 
-/* Medium screens (tablets) */
+/* Responsive Design for Tablets (max-width: 1200px) */
 @media (max-width: 1200px) {
   .bento-grid-container {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+    padding: 0 20px !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
   }
-}
-
-/* Hover effect on grid items with new slide and blur effect */
-.bento-element:hover {
-  transform: translateY(-10px); /* Slide the item upwards */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for floating effect */
-  filter: blur(1px); /* Slight blur effect */
-}
-
-/* Ensuring good background for elements */
-.bento-grid-container .bento-element {
-  background-color: #1e1e1e; /* Dark background for items */
-  color: #ffffff; /* Light text color */
 }

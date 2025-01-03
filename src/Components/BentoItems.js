@@ -7,12 +7,8 @@ export const bentoItems = [
     title: "Item 1",
     element: (
       <div style={{ padding: "10px" }}>
-        <p>
-          In 2015 I founded a theatre company that is still running.
-        </p>
-        <p>
-          In 2017 I created an Escape Room which is still running.
-        </p>
+        <p>In 2015 I founded a theatre company that is still running.</p>
+        <p>In 2017 I created an Escape Room which is still running.</p>
         <p>I love the responsibility of new projects.</p>
         <a
           href="https://www.linkedin.com/in/pablonaveira/"
@@ -49,23 +45,22 @@ export const bentoItems = [
     title: "Item 3",
     element: (
       <div>
-        <p>My best virtue is day-to-day interactions. A good attitude improves all flows.</p>
+        <p>
+          My best virtue is day-to-day interactions. A good attitude improves
+          all flows.
+        </p>
       </div>
     ),
     width: 1,
     height: 1,
   },
   {
-    id: 1,
+    id: 4,
     title: "Item 1",
     element: (
       <div style={{ padding: "10px" }}>
-        <p>
-          In 2015 I founded a theatre company that is still running.
-        </p>
-        <p>
-          In 2017 I created an Escape Room which is still running.
-        </p>
+        <p>In 2015 I founded a theatre company that is still running.</p>
+        <p>In 2017 I created an Escape Room which is still running.</p>
         <p>I love the responsibility of new projects.</p>
         <a
           href="https://www.linkedin.com/in/pablonaveira/"
@@ -80,7 +75,7 @@ export const bentoItems = [
     height: 2,
   },
   {
-    id: 2,
+    id: 5,
     title: "Item 2",
     element: (
       <div>
@@ -97,27 +92,26 @@ export const bentoItems = [
     height: 1,
   },
   {
-    id: 3,
+    id: 6,
     title: "Item 3",
     element: (
       <div>
-        <p>My best virtue is day-to-day interactions. A good attitude improves all flows.</p>
+        <p>
+          My best virtue is day-to-day interactions. A good attitude improves
+          all flows.
+        </p>
       </div>
     ),
     width: 1,
     height: 1,
   },
   {
-    id: 1,
+    id: 7,
     title: "Item 1",
     element: (
       <div style={{ padding: "10px" }}>
-        <p>
-          In 2015 I founded a theatre company that is still running.
-        </p>
-        <p>
-          In 2017 I created an Escape Room which is still running.
-        </p>
+        <p>In 2015 I founded a theatre company that is still running.</p>
+        <p>In 2017 I created an Escape Room which is still running.</p>
         <p>I love the responsibility of new projects.</p>
         <a
           href="https://www.linkedin.com/in/pablonaveira/"
@@ -132,7 +126,7 @@ export const bentoItems = [
     height: 2,
   },
   {
-    id: 2,
+    id: 8,
     title: "Item 2",
     element: (
       <div>
@@ -149,27 +143,26 @@ export const bentoItems = [
     height: 1,
   },
   {
-    id: 3,
+    id: 9,
     title: "Item 3",
     element: (
       <div>
-        <p>My best virtue is day-to-day interactions. A good attitude improves all flows.</p>
+        <p>
+          My best virtue is day-to-day interactions. A good attitude improves
+          all flows.
+        </p>
       </div>
     ),
     width: 1,
     height: 1,
   },
   {
-    id: 1,
+    id: 10,
     title: "Item 1",
     element: (
       <div style={{ padding: "10px" }}>
-        <p>
-          In 2015 I founded a theatre company that is still running.
-        </p>
-        <p>
-          In 2017 I created an Escape Room which is still running.
-        </p>
+        <p>In 2015 I founded a theatre company that is still running.</p>
+        <p>In 2017 I created an Escape Room which is still running.</p>
         <p>I love the responsibility of new projects.</p>
         <a
           href="https://www.linkedin.com/in/pablonaveira/"
@@ -182,33 +175,5 @@ export const bentoItems = [
     ),
     width: 1,
     height: 2,
-  },
-  {
-    id: 2,
-    title: "Item 2",
-    element: (
-      <div>
-        <p>Frontend Tech Lead at Inditex</p>
-        <ul>
-          <li>Code reviews ensuring good practices.</li>
-          <li>Mentoring and onboarding of new frontend profiles.</li>
-          <li>CI/CD with GitHub Actions.</li>
-          <li>Releases preparation and project planning.</li>
-        </ul>
-      </div>
-    ),
-    width: 2,
-    height: 1,
-  },
-  {
-    id: 3,
-    title: "Item 3",
-    element: (
-      <div>
-        <p>My best virtue is day-to-day interactions. A good attitude improves all flows.</p>
-      </div>
-    ),
-    width: 1,
-    height: 1,
   },
 ];
