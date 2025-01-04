@@ -9,7 +9,7 @@
 /* Grid Container Styling */
 .bento-grid-container {
   display: grid;
-  padding: 0 200px !important;
+  padding: 0 300px !important;
   gap: 20px; /* Spacing between items */
   grid-template-columns: repeat(3, 1fr) !important; /* 3 columns by default */
   margin: 0 auto; /* Center the grid */
@@ -18,11 +18,11 @@
 
 /* Grid Item Styling */
 .bento-element {
-  background-color: #1e1e1e; /* Dark background for boxes */
+  /* background-color: #1e1e1e; Dark background for boxes */
   color: #ffffff; /* Light text color */
-  border: 1px solid #dee2e6; /* Light border */
+  /* border: 1px solid #dee2e6; Light border */
   border-radius: 8px; /* Smooth rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow */
   padding: 15px;
   display: flex;
   flex-direction: column; /* Vertical stacking */
@@ -37,6 +37,7 @@
   box-sizing: border-box; /* Include padding in size calculations */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Safeguard Long Text Overflow */
 .bento-element p {
@@ -55,7 +56,7 @@
 @media (max-width: 768px) {
   .bento-grid-container {
     padding: 0 20px !important;
-    grid-template-columns: 1fr !important; /* Single column layout */
+    grid-template-columns: repeat(1, 1fr) !important; /* Single column layout */
     gap: 15px; /* Smaller spacing */
   }
 

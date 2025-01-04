@@ -13,12 +13,12 @@ const MyBentoGrid = () => {
     if (width <= 768) {
       setGridCols(1); // One column for mobile devices
       setRowHeight("auto"); // Auto height for flexibility
-    } else if (width <= 1200) {
+    } else if (width <= 900) {
       setGridCols(2); // Two columns for tablets
-      setRowHeight(180); // Set a fixed row height
+      setRowHeight(100); // Set a fixed row height
     } else {
       setGridCols(3); // Three columns for large screens
-      setRowHeight(200); // Set a fixed row height
+      setRowHeight(120); // Set a fixed row height
     }
   };
 
@@ -39,7 +39,7 @@ const MyBentoGrid = () => {
           container: "bento-grid-container",
           elementContainer: "bento-element",
         }}
-        style={{ backgroundColor: "#121212", color: "#ffffff" }}
+        
       />
     </div>
   );

@@ -2,155 +2,124 @@
 import React from "react";
 
 export const bentoItems = [
-  {
-    id: 1,
-    title: "Item 1",
-    element: (
-      <div style={{ padding: "10px" }}>
-        <p>In 2015 I founded a theatre company that is still running.</p>
-        <p>In 2017 I created an Escape Room which is still running.</p>
-        <p>I love the responsibility of new projects.</p>
-        <a
-          href="https://www.linkedin.com/in/pablonaveira/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit LinkedIn
-        </a>
-      </div>
-    ),
-    width: 1,
-    height: 2,
-  },
+  
   {
     id: 2,
-    title: "Item 2",
+    title: "Researcher & Innovator",
+    color: "#2ecc71",
     element: (
-      <div>
-        <p>Frontend Tech Lead at Inditex</p>
-        <ul>
-          <li>Code reviews ensuring good practices.</li>
-          <li>Mentoring and onboarding of new frontend profiles.</li>
-          <li>CI/CD with GitHub Actions.</li>
-          <li>Releases preparation and project planning.</li>
-        </ul>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Author of 4 research papers and 1 patent in computer science fields.
       </div>
     ),
     width: 2,
-    height: 1,
-    color: "#1e1e1e",
-  },
-  {
-    id: 3,
-    title: "Item 3",
-    element: (
-      <div>
-        <p>
-          My best virtue is day-to-day interactions. A good attitude improves
-          all flows.
-        </p>
-      </div>
-    ),
-    width: 1,
     height: 1,
   },
   {
     id: 4,
-    title: "Item 1",
+    title: "Versatile Athlete",
+    color: "#e74c3c",
     element: (
-      <div style={{ padding: "10px" }}>
-        <p>In 2015 I founded a theatre company that is still running.</p>
-        <p>In 2017 I created an Escape Room which is still running.</p>
-        <p>I love the responsibility of new projects.</p>
-        <a
-          href="https://www.linkedin.com/in/pablonaveira/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit LinkedIn
-        </a>
+      <div style={{ padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Passionate about sports: badminton, table tennis, running, cycling, and shooting.
       </div>
     ),
     width: 1,
     height: 2,
   },
   {
-    id: 5,
-    title: "Item 2",
+    id: 1,
+    title: "National-Level Skater",
+    color: "#3498db",
     element: (
-      <div>
-        <p>Frontend Tech Lead at Inditex</p>
-        <ul>
-          <li>Code reviews ensuring good practices.</li>
-          <li>Mentoring and onboarding of new frontend profiles.</li>
-          <li>CI/CD with GitHub Actions.</li>
-          <li>Releases preparation and project planning.</li>
-        </ul>
+      <div style={{ padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        National-level skater with 100+ medals and a performance in front of the President of India.
       </div>
     ),
-    width: 2,
-    height: 1,
+    width: 1,
+    height: 2,
   },
   {
     id: 6,
-    title: "Item 3",
+    title: "Positive Attitude",
+    color: "#1abc9c",
     element: (
-      <div>
-        <p>
-          My best virtue is day-to-day interactions. A good attitude improves
-          all flows.
-        </p>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Strong interpersonal skills and a positive attitude that fosters teamwork.
+      </div>
+    ),
+    width: 1,
+    height: 1,
+  },
+  
+  {
+    id: 5,
+    title: "Diploma in Computer Engineering",
+    color: "#9b59b6",
+    element: (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Completed Diploma in Computer Engineering at Shri Bhagubhai Mafatlal Polytechnic.
       </div>
     ),
     width: 1,
     height: 1,
   },
   {
-    id: 7,
-    title: "Item 1",
+    id: 3,
+    title: "Typing Speed",
+    color: "#f39c12",
     element: (
-      <div style={{ padding: "10px" }}>
-        <p>In 2015 I founded a theatre company that is still running.</p>
-        <p>In 2017 I created an Escape Room which is still running.</p>
-        <p>I love the responsibility of new projects.</p>
-        <a
-          href="https://www.linkedin.com/in/pablonaveira/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit LinkedIn
-        </a>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Average typing speed of 88 WPM, with a peak of 126 WPM.
+      </div>
+    ),
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 3,
+    title: "Typing Speed",
+    color: "#f39c12",
+    element: (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        I have completed more than a year doing interships.
+      </div>
+    ),
+    width: 1,
+    height: 1,
+  },
+  {
+    id: 8,
+    title: "Cycling for Environment",
+    color: "#34495e",
+    element: (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Cycled over 5000 km for environmental causes, including multiple cyclothons.
+      </div>
+    ),
+    width: 2,
+    height: 1,
+  },
+ 
+  {
+    id: 7,
+    title: "Family Business Support",
+    color: "#f1c40f",
+    element: (
+      <div style={{ padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Assist in my father's photography and videography business.
       </div>
     ),
     width: 1,
     height: 2,
   },
   {
-    id: 8,
-    title: "Item 2",
-    element: (
-      <div>
-        <p>Frontend Tech Lead at Inditex</p>
-        <ul>
-          <li>Code reviews ensuring good practices.</li>
-          <li>Mentoring and onboarding of new frontend profiles.</li>
-          <li>CI/CD with GitHub Actions.</li>
-          <li>Releases preparation and project planning.</li>
-        </ul>
-      </div>
-    ),
-    width: 2,
-    height: 1,
-  },
-  {
     id: 9,
-    title: "Item 3",
+    title: "Drama & Theatre",
+    color: "#e67e22",
     element: (
-      <div>
-        <p>
-          My best virtue is day-to-day interactions. A good attitude improves
-          all flows.
-        </p>
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Performed in 15+ national-level plays at venues like the Royal Opera House and NCPA.
       </div>
     ),
     width: 1,
@@ -158,22 +127,26 @@ export const bentoItems = [
   },
   {
     id: 10,
-    title: "Item 1",
+    title: "Shooting",
+    color: "#d35400",
     element: (
-      <div style={{ padding: "10px" }}>
-        <p>In 2015 I founded a theatre company that is still running.</p>
-        <p>In 2017 I created an Escape Room which is still running.</p>
-        <p>I love the responsibility of new projects.</p>
-        <a
-          href="https://www.linkedin.com/in/pablonaveira/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Visit LinkedIn
-        </a>
+      <div style={{ padding: "10px", display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Awarded 2 gold medals in rifle and pistol shooting at the institute level.
       </div>
     ),
     width: 1,
     height: 2,
+  },
+  {
+    id: 11,
+    title: "Seminar & Mentorship",
+    color: "#e67e22",
+    element: (
+      <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
+        Conducted a seminar at Bhagubhai Mafatlal Polytechnic and mentored juniors.
+      </div>
+    ),
+    width: 1,
+    height: 1,
   },
 ];
