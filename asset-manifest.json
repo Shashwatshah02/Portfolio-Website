@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio-Website/static/css/main.13754874.css",
-    "main.js": "/Portfolio-Website/static/js/main.86690a08.js",
+    "main.css": "/Portfolio-Website/static/css/main.4eebcf6d.css",
+    "main.js": "/Portfolio-Website/static/js/main.a9a66022.js",
     "static/js/787.749b4a44.chunk.js": "/Portfolio-Website/static/js/787.749b4a44.chunk.js",
     "static/media/color-sharp.png": "/Portfolio-Website/static/media/color-sharp.bea361cfef80fefc2d1e.png",
     "static/media/color-sharp2.png": "/Portfolio-Website/static/media/color-sharp2.c87586c6c2f549cb4aa6.png",
@@ -13,12 +13,14 @@
     "static/media/header-img.svg": "/Portfolio-Website/static/media/header-img.84bf93eb20488a753440bf83d27db7bb.svg",
     "static/media/tindog.jpg": "/Portfolio-Website/static/media/tindog.309832a691d6b55569d3.jpg",
     "static/media/earthtag.jpg": "/Portfolio-Website/static/media/earthtag.7186dc5395bc5fa26583.jpg",
+    "static/media/pipelineRobotImage.jpg": "/Portfolio-Website/static/media/pipelineRobotImage.98daa388a2badf9e05c0.jpg",
     "static/media/CentraNo2-Bold.ttf": "/Portfolio-Website/static/media/CentraNo2-Bold.2faff7f7d3fc92a2fcd9.ttf",
     "static/media/CentraNo2-Medium.ttf": "/Portfolio-Website/static/media/CentraNo2-Medium.f94be5b326d78bb32b95.ttf",
     "static/media/CentraNo2-Book.ttf": "/Portfolio-Website/static/media/CentraNo2-Book.2b143fa4b734a3584043.ttf",
     "static/media/footer-bg.png": "/Portfolio-Website/static/media/footer-bg.7bd67c0f73571d0acc02.png",
     "static/media/gasleakage.jpg": "/Portfolio-Website/static/media/gasleakage.5340bc6cc550a352a925.jpg",
     "static/media/homemade.jpg": "/Portfolio-Website/static/media/homemade.a67e967097eedeed6c32.jpg",
+    "static/media/spinnerClawImage.jpg": "/Portfolio-Website/static/media/spinnerClawImage.e86abf4fb307f6aeb771.jpg",
     "static/media/contact-img.svg": "/Portfolio-Website/static/media/contact-img.87eac2b29352fa01abb2f9510ef6ac7e.svg",
     "static/media/Shashwat Logo.png": "/Portfolio-Website/static/media/Shashwat Logo.1d749dfe0910d0d2bcf7.png",
     "static/media/sih2022.jpg": "/Portfolio-Website/static/media/sih2022.ea5c35afd97d4d56a4c1.jpg",
@@ -41,12 +43,12 @@
     "index.html": "/Portfolio-Website/index.html",
     "static/media/nav-icon4.svg": "/Portfolio-Website/static/media/nav-icon4.15adea6ad7785ebf7f8b1122561e62c0.svg",
     "static/media/nav-icon1.svg": "/Portfolio-Website/static/media/nav-icon1.721d5414c26365f117e71d46b6641cb2.svg",
-    "main.13754874.css.map": "/Portfolio-Website/static/css/main.13754874.css.map",
-    "main.86690a08.js.map": "/Portfolio-Website/static/js/main.86690a08.js.map",
+    "main.4eebcf6d.css.map": "/Portfolio-Website/static/css/main.4eebcf6d.css.map",
+    "main.a9a66022.js.map": "/Portfolio-Website/static/js/main.a9a66022.js.map",
     "787.749b4a44.chunk.js.map": "/Portfolio-Website/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.13754874.css",
-    "static/js/main.86690a08.js"
+    "static/css/main.4eebcf6d.css",
+    "static/js/main.a9a66022.js"
   ]
 }
