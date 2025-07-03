@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Projects from "./Components/Projects";
 import Skills from "./Components/Skills";
+import Exp from "./Components/EducationExperience"
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Banner />
       <Skills />
       <MyBentoGrid />
+      <Exp />
       <Projects />
       <Footer />
     </div>

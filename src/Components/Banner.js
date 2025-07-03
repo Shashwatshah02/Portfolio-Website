@@ -56,20 +56,25 @@ export default function Banner() {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <span className="tagline">Welcome to my Portfolio</span>
+                  <span className="tagline">
+                    Engineering my story, beyond the screen
+                  </span>
                   <h1>
                     '<span className="wrap">{text}</span>
                   </h1>
                   <p>
-                    I am currently pursuing a Bachelor's degree in Computer
-                    Science at Dwarkadas J. Sanghvi College of Engineering. With
-                    a current CGPA of 9.4/10, I have experience in Web/App
-                    Development, IOT and AIML. With multiple internships
-                   and research papers published, I'm a national-level artistic skater too.
+                    I'm Shashwat, an incoming Computer Engineering Master's
+                    student at NYU and a CS grad (9.35/10 CGPA). I build across
+                    Web & App Dev, IoT, and AI/ML, backed by 5 internships, 4
+                    research papers, and 3 patents. Beyond tech, I'm a national-level
+                    artistic skater and stage actor, bringing a unique blend of
+                    precision and creativity to every challenge.
                   </p>
                   <a href="mailto:shashwatshah02@gmail.com">
                     <button>
-                      <span style={{display:'flex'}}>Lets Connect <ArrowRightCircle size={25} /></span>
+                      <span style={{ display: "flex" }}>
+                        Lets Connect <ArrowRightCircle size={25} />
+                      </span>
                     </button>
                   </a>
                 </div>

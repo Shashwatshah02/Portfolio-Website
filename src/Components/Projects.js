@@ -12,28 +12,82 @@ import projImg5 from "../assets/img/News-monkey.jpg";
 import projImg6 from "../assets/img/portfolio.jpg";
 import projImg7 from "../assets/img/shahcinepix.jpg";
 import projImg8 from "../assets/img/homemade.jpg";
-import sih2024 from "../assets/img/sih2024.jpg"
-import gasleakage from "../assets/img/gasleakage.jpg"
-import singularity from "../assets/img/singularity.jpg"
-import grocerystore from "../assets/img/grocerystore.jpg"
-import shahcinepix from "../assets/img/shahcinepix.jpg"
-import aapkaadhikar from "../assets/img/aapkaadhikar.jpg"
-import flashchat from "../assets/img/flashchat.jpg"
-import iitpatna from "../assets/img/iitpatna.jpg"
-import research from "../assets/img/reseach.jpg"
-import ola from "../assets/img/ola.jpg"
-import landbot from "../assets/img/landbot.jpg"
-import sih2022 from "../assets/img/sih2022.jpg"
-import smarthome from "../assets/img/smarthome.jpg"
-import sociopedia from "../assets/img/sociopedia.jpg"
-
-
+import pipelineRobotImage from "../assets/img/pipelineRobotImage.jpg";
+import sih2024 from "../assets/img/sih2024.jpg";
+import gasleakage from "../assets/img/gasleakage.jpg";
+import singularity from "../assets/img/singularity.jpg";
+import grocerystore from "../assets/img/grocerystore.jpg";
+import shahcinepix from "../assets/img/shahcinepix.jpg";
+import aapkaadhikar from "../assets/img/aapkaadhikar.jpg";
+import flashchat from "../assets/img/flashchat.jpg";
+import iitpatna from "../assets/img/iitpatna.jpg";
+import research from "../assets/img/reseach.jpg";
+import ola from "../assets/img/ola.jpg";
+import landbot from "../assets/img/landbot.jpg";
+import sih2022 from "../assets/img/sih2022.jpg";
+import smarthome from "../assets/img/smarthome.jpg";
+import sociopedia from "../assets/img/sociopedia.jpg";
+import whatsappLoggerImage from "../assets/img/whatsappLoggerImage.jpg"; // Import your WhatsApp Logger image
+import spinnerClawImage from "../assets/img/spinnerClawImage.jpg"// Import your spinner claw image
 
 import { useState } from "react";
 import { Spotify, Wordpress } from "react-bootstrap-icons";
 import { IconVaccine } from "@tabler/icons-react";
 
 const cardData = [
+  {
+    header: "Patented Project (202521045231)",
+    title: "A Pipeline Traversing Robot",
+    text: "A Pipeline Traversing Robot capable of moving both horizontally and vertically through pipelines, using smart sensors and obstacle-avoidance mechanisms.",
+    listItems: [
+      "Designed a robot that uses castor wheels and strong magnetic adhesion to traverse vertical and horizontal pipelines.",
+      "Integrated gas and temperature-humidity sensors for real-time leak detection and environmental monitoring.",
+      "Implemented ultrasonic proximity sensors and imaging for autonomous obstacle avoidance and visual inspection.",
+    ],
+    buttonText: "View Patent",
+    buttonIcon: "🤖",
+    buttonLink:
+      "https://github.com/Shashwatshah02/Be_Project_2025/tree/main/Major%20Project", // You can update this to the specific patent page if available
+    tags: ["#Patent", "#IoT", "#Robotics", "#SensorFusion", "#Innovation"],
+    imageUrl: pipelineRobotImage, // Replace with your image import or asset
+  },
+  {
+    header: "Nuvama Internship Project",
+    title: "WhatsApp Web Logger",
+    text: "Built a browser-based automation tool that logs all incoming WhatsApp Web messages—including text, images, videos, and documents—and automatically stores them to your Drive.",
+    listItems: [
+      "Captured and logged all incoming chats, media, and documents in real time using browser script injection.",
+      "Integrated with One Drive API to automatically store and organize logged content securely.",
+      "Implemented a smart diff-check to log only new, unseen messages, optimizing storage and avoiding redundancy.",
+    ],
+    buttonText: "View Code",
+    buttonIcon: "💬",
+    buttonLink: "https://github.com/Shashwatshah02/Whatsap-web-chat-logger", // Replace with your actual repo link
+    tags: ["#JavaScript", "#Automation", "#API", "#Security", "#WhatsAppWeb"],
+    imageUrl: whatsappLoggerImage, // Replace with the actual image/screenshot
+  },
+  {
+    header: "Design Patent (458534-001)",
+    title: "Adjustable fidget spinner base for pipe Climbing",
+    text: "Secured a published design patent for a unique fidget spinner–based claw mechanism that enables efficient vertical and angular pipe traversal. The design optimizes grip, stability, and movement for compact robots navigating industrial environments.",
+    listItems: [
+      "Developed a mechanical design using a fidget spinner–style claw for seamless pipe climbing.",
+      "Enhanced robot stability and traction during vertical traversal through controlled angular grip points.",
+      "Filed and published the design patent under the Indian Patent Office to protect the innovation.",
+    ],
+    buttonText: "View Design Patent",
+    buttonIcon: "🛠️",
+    buttonLink:
+      "https://search.ipindia.gov.in/DesignApplicationStatus/", // Replace with specific link if available
+    tags: [
+      "#Patent",
+      "#MechanicalDesign",
+      "#Robotics",
+      "#Innovation",
+      "#PipeClimbing",
+    ],
+    imageUrl: spinnerClawImage, // Replace with actual image/screenshot or patent diagram
+  },
   {
     header: "Smart India Hackathon 2024",
     title: "EcoVahak - India Post Sustainability !",
@@ -46,7 +100,17 @@ const cardData = [
     buttonText: "View Source Code", // Text for the button
     buttonIcon: "🚀", // Example emoji icon, replace with your logo
     buttonLink: "https://github.com/Shashwatshah02/sih_2024_hackstreet_boys",
-    tags: ["#React", "#Flutter", "#AIML", "#IoT", "#MERN"," #Figma", "#Raspberry Pi", "#Chatbot", "#OCR"], // Tags for pinning
+    tags: [
+      "#React",
+      "#Flutter",
+      "#AIML",
+      "#IoT",
+      "#MERN",
+      " #Figma",
+      "#Raspberry Pi",
+      "#Chatbot",
+      "#OCR",
+    ], // Tags for pinning
     imageUrl: sih2024, // Replace with actual image URLs
   },
   {
@@ -61,7 +125,15 @@ const cardData = [
     buttonText: "View Source Code", // Text for the button
     buttonIcon: "🔒", // Example emoji icon, replace with your logo
     buttonLink: "https://github.com/Shashwatshah02/gas_leakage_detector",
-    tags: ["#IoT", "#Sensors", "#ML", "#Flutter", "#EmbeddedSystems", "#Raspberry Pi", "#Figma"], // Tags for pinning
+    tags: [
+      "#IoT",
+      "#Sensors",
+      "#ML",
+      "#Flutter",
+      "#EmbeddedSystems",
+      "#Raspberry Pi",
+      "#Figma",
+    ], // Tags for pinning
     imageUrl: gasleakage, // Replace with actual image URLs
   },
   {
@@ -75,230 +147,315 @@ const cardData = [
     ],
     buttonText: "View Research Work", // Text for the button
     buttonIcon: "📄", // Example emoji icon, replace with your logo
-    buttonLink: "https://github.com/Shashwatshah02/Singularity_Hiring_Employees", // Replace with the actual link to the paper
-    tags: ["#AI", "#Ethics", "#MachineLearning", "#Research", "#BiasReduction", "#Singularity"], // Tags for pinning
+    buttonLink:
+      "https://github.com/Shashwatshah02/Singularity_Hiring_Employees", // Replace with the actual link to the paper
+    tags: [
+      "#AI",
+      "#Ethics",
+      "#MachineLearning",
+      "#Research",
+      "#BiasReduction",
+      "#Singularity",
+    ], // Tags for pinning
     imageUrl: singularity, // Replace with the actual image URL
-},
-{
-  header: "Hexagn Internship Project",
-  title: "E-Commerce Grocery Store Platform",
-  text: "Developed a feature-rich e-commerce platform for a grocery store using the MERN stack. Designed and implemented the entire backend system, including REST APIs and database management, to ensure seamless operations and user experience.",
-  listItems: [
-    "Built REST APIs for product management, user authentication, and order processing.",
-    "Integrated payment gateways for secure transactions.",
-    "Developed an Admin Panel for easy updatation.",
-  ],
-  buttonText: "View Project Details", // Text for the button
-  buttonIcon: "🛒", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/grocery_store", // Replace with the actual link, if available
-  tags: ["#MERN", "#Backend", "#RESTAPI", "#Ecommerce", "#MongoDB", "#NodeJS", "#React", "#MySQL"], // Tags for pinning
-  imageUrl: grocerystore, // Replace with the actual image URL
-},
-{
-  header: "Photography Business Website",
-  title: "Shah Photos(Cinepix)",
-  text: "Developed a professional website for Shahcinepix.com, a photography business, using WordPress and Shopify. Leveraged no-code tools to create a user-friendly platform for showcasing portfolios and managing online sales seamlessly.",
-  listItems: [
-    "Designed an intuitive and visually appealing layout for showcasing photography portfolios.",
-    "Integrated Shopify for seamless online sales and inventory management.",
-    "Enhanced site performance with optimized plugins and responsive design.",
-  ],
-  buttonText: "Visit Website", // Text for the button
-  buttonIcon: "📸", // Example emoji icon, replace with your logo
-  buttonLink: "https://www.shahcinepix.com", // Replace with the actual link
-  tags: ["#WordPress", "#NoCode", "#Shopify", "#Photography", "#ResponsiveDesign"], // Tags for pinning
-  imageUrl: shahcinepix, // Replace with the actual image URL
-},
-{
-  header: "Figma Design for Lawyer App",
-  title: "Aapka Adhikaar",
-  text: "Designed a comprehensive Figma prototype for 'Aapka Adhikaar,' an app aimed at encouraging lawyers to take on pro bono work. The app includes dashboards, leaderboards, and intuitive interfaces to streamline case management and track contributions.",
-  listItems: [
-    "Developed interactive dashboards for case tracking and management.",
-    "Implemented a leaderboard system to gamify pro bono contributions.",
-    "Crafted user-friendly interfaces for both lawyers and clients.",
-  ],
-  buttonText: "View Design Prototype", // Text for the button
-  buttonIcon: "🎨", // Example emoji icon, replace with your logo
-  buttonLink: "https://www.figma.com/design/7TTV79jgJJTcbptJ9b0DBo/SIH---Lawyer?node-id=0-1&t=Wb5QCj0MBwXdfHXj-1", // Replace with the actual prototype link
-  tags: ["#Figma", "#UI/UX", "#ProBono", "#LawTech", "#DashboardDesign"], // Tags for pinning
-  imageUrl: aapkaadhikar, // Replace with the actual image URL
-},
-{
-  header: "Eco-friendly Project",
-  title: "Earth Tag",
-  text: "Earth Tag is an eco-friendly platform where customers earn coupons in return for their payments, while simultaneously contributing to environmental sustainability through tree planting. This innovative solution combines commerce with ecological responsibility.",
-  listItems: [
-    "Customers receive coupons with every payment made.",
-    "For every payment, a tree is planted to offset the carbon footprint.",
-    "Integrates payment gateway for seamless transactions and eco-friendly rewards.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "🌱", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/EarthTag", // Replace with your actual link if applicable
-  tags: ["#EcoFriendly", "#Sustainability", "#GreenTech", "#WebDevelopment", "#JavaScript", "#Node.js", "#MongoDB"], // Tags for pinning
-  imageUrl: earthtag, // Replace with actual image URL
-},
-{
-  header: "Real-time Chat Application",
-  title: "FlashChat",
-  text: "FlashChat is a real-time chat application developed with Flutter. It allows users to sign up, authenticate, and chat with each other in a seamless, instant messaging environment, similar to popular platforms like WhatsApp.",
-  listItems: [
-    "User authentication with Firebase for secure login.",
-    "Real-time messaging with cloud database integration.",
-    "Allows text, media sharing, and group chats."
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "💬", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/Chatting-App", // Replace with your actual link if applicable
-  tags: ["#Flutter", "#Firebase", "#ChatApp", "#RealTimeMessaging", "#Authentication", "#MobileApp"], // Tags for pinning
-  imageUrl: flashchat, // Replace with actual image URL
-},
-{
-  header: "Internship Project at IIT Patna",
-  title: "Video to Text Conversion with Summarization",
-  text: "This project focuses on converting video content into text and summarizing it to extract key information. Developed for the fintech domain, the system utilizes Assembly AI API for transcription and leverages Transformers and the pipeline features for efficient text summarization, providing insights from video data in a comprehensive manner.",
-  listItems: [
-    "Uses Assembly AI API for accurate video-to-text conversion.",
-    "Employs Transformers and the pipeline feature for text summarization.",
-    "Implemented in the fintech domain for seamless data extraction and analysis.",
-    "Enhances understanding of video-based financial content with summarized insights.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "📹", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/IIT-Patna-Research-Internship/", // Replace with your actual link if applicable
-  tags: ["#FinTech", "#VideoToText", "#Summarization", "#AssemblyAI", "#Transformers", "#APIs", "#MachineLearning"], // Tags for pinning
-  imageUrl: iitpatna, // Replace with actual image URL
-},
-{
-  header: "Research Internship Automation",
-  title: "Automated Cold Mailing System",
-  text: "This project automates the cold mailing process for Master's students seeking research internships. By scraping multiple CSV files of professors from various academic platforms, it removes the hassle of manually contacting professors, streamlining the application process and saving valuable time for students.",
-  listItems: [
-    "Automates the process of sending personalized cold emails to professors.",
-    "Uses web scraping to gather CSV files containing professors' contact details.",
-    "Helps Master's students reach out to potential research mentors with ease.",
-    "Streamlines internship applications, allowing students to focus on research.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "📧", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/research_internship_automation", // Replace with your actual link if applicable
-  tags: ["#WebScraping", "#Automation", "#ColdMailing", "#ResearchInternships", "#Python", "#CSV",], // Tags for pinning
-  imageUrl: research, // Replace with actual image URL
-},
-{
-  header: "Ride Sharing App",
-  title: "Ola Clone",
-  text: "The Ola Clone is a ride-sharing application developed using the Ionic framework. It leverages the Google Places API for location-based services and features an intuitive user interface for easy ride booking, providing a seamless experience for users looking for quick transportation.",
-  listItems: [
-    "Developed using the Ionic framework for cross-platform functionality.",
-    "Integrated Google Places API for accurate location services and search.",
-    "User-friendly interface to book rides easily and efficiently.",
-    "Real-time tracking and location updates for a seamless ride experience.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "🚗", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/ionic-Ola", // Replace with your actual link if applicable
-  tags: ["#Ionic", "#GooglePlacesAPI", "#MobileApp", "#RideSharing", "#UI", "#CrossPlatform"], // Tags for pinning
-  imageUrl: ola, // Replace with actual image URL
-},
-{
-  header: "WhatsApp Chatbot with Payment Integration",
-  title: "WhatsApp Chatbot with Razorpay & IVR",
-  text: "This WhatsApp chatbot offers seamless payment integration using Razorpay, enabling users to complete transactions directly within the chat. It also features an Interactive Voice Response (IVR) system, where users can interact with an automated voice (customized with your own voice) for various services, creating an intuitive and efficient user experience.",
-  listItems: [
-    "Integrated Razorpay for seamless payment processing within WhatsApp chat.",
-    "Implemented IVR with your own voice for a personalized touch in user interactions. Check - exotel.com",
-    "Allows users to complete transactions and access services via chatbot interface.",
-    "Supports various automated tasks and services via WhatsApp, improving user engagement.",
-  ],
-  buttonText: "View Resource", // Text for the button
-  buttonIcon: "🤖", // Example emoji icon, replace with your logo
-  buttonLink: "https://landbot.io/", // Replace with your actual link if applicable
-  tags: ["#WhatsAppBot", "#Razorpay", "#IVR", "#VoiceIntegration", "#Chatbot", "#PaymentIntegration", "#Python"], // Tags for pinning
-  imageUrl: landbot, // Replace with actual image URL
-},
-{
-  header: "Smart India Hackathon 2022",
-  title: "Scholarship Grant System",
-  text: "This project, developed for the Smart India Hackathon 2022, aimed to streamline the scholarship grant process by providing financial aid to students at the earliest. Using the Django framework for backend development, the system integrates OpenCV for automated document verification, ensuring a secure and efficient process for scholarship applications.",
-  listItems: [
-    "Developed using Django framework for seamless backend management.",
-    "Used OpenCV for automated document verification to ensure authenticity.",
-    "Streamlined the scholarship application process, providing quick financial aid.",
-    "Enhanced security and efficiency by automating the document validation process.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "🎓", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/sih_2022", // Replace with your actual link if applicable
-  tags: ["#SIH2022", "#Django", "#OpenCV", "#Scholarship", "#Automation", "#BackendDevelopment", "#DocumentVerification"], // Tags for pinning
-  imageUrl: sih2022, // Replace with actual image URL
-},
-{
-  header: "Smart Home Automation",
-  title: "IoT Smart Home System",
-  text: "This Smart Home project enables the control of a fan and light using IoT and a Flutter application. The system allows users to remotely manage their devices via the app, providing convenience and energy efficiency. The IoT-enabled devices can be switched on/off, with real-time status updates, enhancing the automation experience.",
-  listItems: [
-    "Controls fan and light using IoT for remote management.",
-    "Developed a Flutter application for seamless control and monitoring.",
-    "Real-time status updates for both fan and light in the mobile app.",
-    "Improves convenience and energy efficiency with automated device control.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "🏠", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/RaspberryPi-Codes", // Replace with your actual link if applicable
-  tags: ["#IoT", "#Flutter", "#SmartHome", "#Automation", "#EnergyEfficiency", "#MobileApp"], // Tags for pinning
-  imageUrl: smarthome, // Replace with actual image URL
-},
-{
-  header: "Social Media for Seniors",
-  title: "Sociopedia",
-  text: "Sociopedia is a social media website designed specifically for the elderly, helping them connect with others, reduce boredom, and stay engaged. Built with the MERN stack, this platform offers a user-friendly interface for older adults to socialize, share posts, and interact with their peers, enhancing their quality of life and promoting mental well-being.",
-  listItems: [
-    "Developed using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-    "Designed with an intuitive, user-friendly interface for older adults.",
-    "Allows seniors to connect with peers, share posts, and participate in social activities.",
-    "Helps reduce boredom and loneliness, promoting better mental health.",
-  ],
-  buttonText: "View Source Code", // Text for the button
-  buttonIcon: "🌐", // Example emoji icon, replace with your logo
-  buttonLink: "https://github.com/Shashwatshah02/SocioPedia", // Replace with your actual link if applicable
-  tags: ["#MERN", "#SocialMedia", "#Elderly", "#MentalHealth", "#SocialConnection", "#FullStackDevelopment"], // Tags for pinning
-  imageUrl: sociopedia, // Replace with actual image URL
-}
+  },
+  {
+    header: "Hexagn Internship Project",
+    title: "E-Commerce Grocery Store Platform",
+    text: "Developed a feature-rich e-commerce platform for a grocery store using the MERN stack. Designed and implemented the entire backend system, including REST APIs and database management, to ensure seamless operations and user experience.",
+    listItems: [
+      "Built REST APIs for product management, user authentication, and order processing.",
+      "Integrated payment gateways for secure transactions.",
+      "Developed an Admin Panel for easy updatation.",
+    ],
+    buttonText: "View Project Details", // Text for the button
+    buttonIcon: "🛒", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/grocery_store", // Replace with the actual link, if available
+    tags: [
+      "#MERN",
+      "#Backend",
+      "#RESTAPI",
+      "#Ecommerce",
+      "#MongoDB",
+      "#NodeJS",
+      "#React",
+      "#MySQL",
+    ], // Tags for pinning
+    imageUrl: grocerystore, // Replace with the actual image URL
+  },
+  {
+    header: "Photography Business Website",
+    title: "Shah Photos(Cinepix)",
+    text: "Developed a professional website for Shahcinepix.com, a photography business, using WordPress and Shopify. Leveraged no-code tools to create a user-friendly platform for showcasing portfolios and managing online sales seamlessly.",
+    listItems: [
+      "Designed an intuitive and visually appealing layout for showcasing photography portfolios.",
+      "Integrated Shopify for seamless online sales and inventory management.",
+      "Enhanced site performance with optimized plugins and responsive design.",
+    ],
+    buttonText: "Visit Website", // Text for the button
+    buttonIcon: "📸", // Example emoji icon, replace with your logo
+    buttonLink: "https://www.shahcinepix.com", // Replace with the actual link
+    tags: [
+      "#WordPress",
+      "#NoCode",
+      "#Shopify",
+      "#Photography",
+      "#ResponsiveDesign",
+    ], // Tags for pinning
+    imageUrl: shahcinepix, // Replace with the actual image URL
+  },
+  {
+    header: "Figma Design for Lawyer App",
+    title: "Aapka Adhikaar",
+    text: "Designed a comprehensive Figma prototype for 'Aapka Adhikaar,' an app aimed at encouraging lawyers to take on pro bono work. The app includes dashboards, leaderboards, and intuitive interfaces to streamline case management and track contributions.",
+    listItems: [
+      "Developed interactive dashboards for case tracking and management.",
+      "Implemented a leaderboard system to gamify pro bono contributions.",
+      "Crafted user-friendly interfaces for both lawyers and clients.",
+    ],
+    buttonText: "View Design Prototype", // Text for the button
+    buttonIcon: "🎨", // Example emoji icon, replace with your logo
+    buttonLink:
+      "https://www.figma.com/design/7TTV79jgJJTcbptJ9b0DBo/SIH---Lawyer?node-id=0-1&t=Wb5QCj0MBwXdfHXj-1", // Replace with the actual prototype link
+    tags: ["#Figma", "#UI/UX", "#ProBono", "#LawTech", "#DashboardDesign"], // Tags for pinning
+    imageUrl: aapkaadhikar, // Replace with the actual image URL
+  },
+  {
+    header: "Eco-friendly Project",
+    title: "Earth Tag",
+    text: "Earth Tag is an eco-friendly platform where customers earn coupons in return for their payments, while simultaneously contributing to environmental sustainability through tree planting. This innovative solution combines commerce with ecological responsibility.",
+    listItems: [
+      "Customers receive coupons with every payment made.",
+      "For every payment, a tree is planted to offset the carbon footprint.",
+      "Integrates payment gateway for seamless transactions and eco-friendly rewards.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "🌱", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/EarthTag", // Replace with your actual link if applicable
+    tags: [
+      "#EcoFriendly",
+      "#Sustainability",
+      "#GreenTech",
+      "#WebDevelopment",
+      "#JavaScript",
+      "#Node.js",
+      "#MongoDB",
+    ], // Tags for pinning
+    imageUrl: earthtag, // Replace with actual image URL
+  },
+  {
+    header: "Real-time Chat Application",
+    title: "FlashChat",
+    text: "FlashChat is a real-time chat application developed with Flutter. It allows users to sign up, authenticate, and chat with each other in a seamless, instant messaging environment, similar to popular platforms like WhatsApp.",
+    listItems: [
+      "User authentication with Firebase for secure login.",
+      "Real-time messaging with cloud database integration.",
+      "Allows text, media sharing, and group chats.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "💬", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/Chatting-App", // Replace with your actual link if applicable
+    tags: [
+      "#Flutter",
+      "#Firebase",
+      "#ChatApp",
+      "#RealTimeMessaging",
+      "#Authentication",
+      "#MobileApp",
+    ], // Tags for pinning
+    imageUrl: flashchat, // Replace with actual image URL
+  },
+  {
+    header: "Internship Project at IIT Patna",
+    title: "Video to Text Conversion with Summarization",
+    text: "This project focuses on converting video content into text and summarizing it to extract key information. Developed for the fintech domain, the system utilizes Assembly AI API for transcription and leverages Transformers and the pipeline features for efficient text summarization, providing insights from video data in a comprehensive manner.",
+    listItems: [
+      "Uses Assembly AI API for accurate video-to-text conversion.",
+      "Employs Transformers and the pipeline feature for text summarization.",
+      "Implemented in the fintech domain for seamless data extraction and analysis.",
+      "Enhances understanding of video-based financial content with summarized insights.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "📹", // Example emoji icon, replace with your logo
+    buttonLink:
+      "https://github.com/Shashwatshah02/IIT-Patna-Research-Internship/", // Replace with your actual link if applicable
+    tags: [
+      "#FinTech",
+      "#VideoToText",
+      "#Summarization",
+      "#AssemblyAI",
+      "#Transformers",
+      "#APIs",
+      "#MachineLearning",
+    ], // Tags for pinning
+    imageUrl: iitpatna, // Replace with actual image URL
+  },
+  {
+    header: "Research Internship Automation",
+    title: "Automated Cold Mailing System",
+    text: "This project automates the cold mailing process for Master's students seeking research internships. By scraping multiple CSV files of professors from various academic platforms, it removes the hassle of manually contacting professors, streamlining the application process and saving valuable time for students.",
+    listItems: [
+      "Automates the process of sending personalized cold emails to professors.",
+      "Uses web scraping to gather CSV files containing professors' contact details.",
+      "Helps Master's students reach out to potential research mentors with ease.",
+      "Streamlines internship applications, allowing students to focus on research.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "📧", // Example emoji icon, replace with your logo
+    buttonLink:
+      "https://github.com/Shashwatshah02/research_internship_automation", // Replace with your actual link if applicable
+    tags: [
+      "#WebScraping",
+      "#Automation",
+      "#ColdMailing",
+      "#ResearchInternships",
+      "#Python",
+      "#CSV",
+    ], // Tags for pinning
+    imageUrl: research, // Replace with actual image URL
+  },
+  {
+    header: "Ride Sharing App",
+    title: "Ola Clone",
+    text: "The Ola Clone is a ride-sharing application developed using the Ionic framework. It leverages the Google Places API for location-based services and features an intuitive user interface for easy ride booking, providing a seamless experience for users looking for quick transportation.",
+    listItems: [
+      "Developed using the Ionic framework for cross-platform functionality.",
+      "Integrated Google Places API for accurate location services and search.",
+      "User-friendly interface to book rides easily and efficiently.",
+      "Real-time tracking and location updates for a seamless ride experience.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "🚗", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/ionic-Ola", // Replace with your actual link if applicable
+    tags: [
+      "#Ionic",
+      "#GooglePlacesAPI",
+      "#MobileApp",
+      "#RideSharing",
+      "#UI",
+      "#CrossPlatform",
+    ], // Tags for pinning
+    imageUrl: ola, // Replace with actual image URL
+  },
+  {
+    header: "WhatsApp Chatbot with Payment Integration",
+    title: "WhatsApp Chatbot with Razorpay & IVR",
+    text: "This WhatsApp chatbot offers seamless payment integration using Razorpay, enabling users to complete transactions directly within the chat. It also features an Interactive Voice Response (IVR) system, where users can interact with an automated voice (customized with your own voice) for various services, creating an intuitive and efficient user experience.",
+    listItems: [
+      "Integrated Razorpay for seamless payment processing within WhatsApp chat.",
+      "Implemented IVR with your own voice for a personalized touch in user interactions. Check - exotel.com",
+      "Allows users to complete transactions and access services via chatbot interface.",
+      "Supports various automated tasks and services via WhatsApp, improving user engagement.",
+    ],
+    buttonText: "View Resource", // Text for the button
+    buttonIcon: "🤖", // Example emoji icon, replace with your logo
+    buttonLink: "https://landbot.io/", // Replace with your actual link if applicable
+    tags: [
+      "#WhatsAppBot",
+      "#Razorpay",
+      "#IVR",
+      "#VoiceIntegration",
+      "#Chatbot",
+      "#PaymentIntegration",
+      "#Python",
+    ], // Tags for pinning
+    imageUrl: landbot, // Replace with actual image URL
+  },
+  {
+    header: "Smart India Hackathon 2022",
+    title: "Scholarship Grant System",
+    text: "This project, developed for the Smart India Hackathon 2022, aimed to streamline the scholarship grant process by providing financial aid to students at the earliest. Using the Django framework for backend development, the system integrates OpenCV for automated document verification, ensuring a secure and efficient process for scholarship applications.",
+    listItems: [
+      "Developed using Django framework for seamless backend management.",
+      "Used OpenCV for automated document verification to ensure authenticity.",
+      "Streamlined the scholarship application process, providing quick financial aid.",
+      "Enhanced security and efficiency by automating the document validation process.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "🎓", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/sih_2022", // Replace with your actual link if applicable
+    tags: [
+      "#SIH2022",
+      "#Django",
+      "#OpenCV",
+      "#Scholarship",
+      "#Automation",
+      "#BackendDevelopment",
+      "#DocumentVerification",
+    ], // Tags for pinning
+    imageUrl: sih2022, // Replace with actual image URL
+  },
+  {
+    header: "Smart Home Automation",
+    title: "IoT Smart Home System",
+    text: "This Smart Home project enables the control of a fan and light using IoT and a Flutter application. The system allows users to remotely manage their devices via the app, providing convenience and energy efficiency. The IoT-enabled devices can be switched on/off, with real-time status updates, enhancing the automation experience.",
+    listItems: [
+      "Controls fan and light using IoT for remote management.",
+      "Developed a Flutter application for seamless control and monitoring.",
+      "Real-time status updates for both fan and light in the mobile app.",
+      "Improves convenience and energy efficiency with automated device control.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "🏠", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/RaspberryPi-Codes", // Replace with your actual link if applicable
+    tags: [
+      "#IoT",
+      "#Flutter",
+      "#SmartHome",
+      "#Automation",
+      "#EnergyEfficiency",
+      "#MobileApp",
+    ], // Tags for pinning
+    imageUrl: smarthome, // Replace with actual image URL
+  },
+  {
+    header: "Social Media for Seniors",
+    title: "Sociopedia",
+    text: "Sociopedia is a social media website designed specifically for the elderly, helping them connect with others, reduce boredom, and stay engaged. Built with the MERN stack, this platform offers a user-friendly interface for older adults to socialize, share posts, and interact with their peers, enhancing their quality of life and promoting mental well-being.",
+    listItems: [
+      "Developed using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Designed with an intuitive, user-friendly interface for older adults.",
+      "Allows seniors to connect with peers, share posts, and participate in social activities.",
+      "Helps reduce boredom and loneliness, promoting better mental health.",
+    ],
+    buttonText: "View Source Code", // Text for the button
+    buttonIcon: "🌐", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/SocioPedia", // Replace with your actual link if applicable
+    tags: [
+      "#MERN",
+      "#SocialMedia",
+      "#Elderly",
+      "#MentalHealth",
+      "#SocialConnection",
+      "#FullStackDevelopment",
+    ], // Tags for pinning
+    imageUrl: sociopedia, // Replace with actual image URL
+  },
 
-
-
-
-
-
-// --> Few more projects that canbe added
-// Figma BookmyShow
-// Homemade Delights Wordpress
-// SIH 2022
-// ionic ola
-// github clone at spit hackathon
-// pictures related to photography
-// blog website
-// admin dashboard
-// tindog
-// Spotify
-// newsmonkey
-// weather api
-// covid IconVaccine
-// shopify toothbrush
-// cflex internship
-// sociopedia
-// todolist
-// razorpay
-// whatsap bot
-// IVR
-// smart home
-// autmation email
-// findmymetro
-
-
-
+  // --> Few more projects that canbe added
+  // Figma BookmyShow
+  // Homemade Delights Wordpress
+  // SIH 2022
+  // ionic ola
+  // github clone at spit hackathon
+  // pictures related to photography
+  // blog website
+  // admin dashboard
+  // tindog
+  // Spotify
+  // newsmonkey
+  // weather api
+  // covid IconVaccine
+  // shopify toothbrush
+  // cflex internship
+  // sociopedia
+  // todolist
+  // razorpay
+  // whatsap bot
+  // IVR
+  // smart home
+  // autmation email
+  // findmymetro
 ];
 
 export default function Projects() {
@@ -343,7 +500,12 @@ export default function Projects() {
                     <Card.Body style={{ color: "white", textAlign: "center" }}>
                       <Card.Title>{card.title}</Card.Title>
                       <Card.Text
-                        style={{ color: "white", textAlign: "justify", margin: 0, width: "100%" }}
+                        style={{
+                          color: "white",
+                          textAlign: "justify",
+                          margin: 0,
+                          width: "100%",
+                        }}
                       >
                         {card.text}
                       </Card.Text>
@@ -399,19 +561,19 @@ export default function Projects() {
                         marginTop: "auto",
                       }}
                     >
-                    <a href={card.buttonLink}>
-                      <Button
-                        variant="primary"
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: "5px",
-                        }}
-                      >
-                        <span>{card.buttonIcon}</span>
-                        {card.buttonText}
-                      </Button>
+                      <a href={card.buttonLink}>
+                        <Button
+                          variant="primary"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "5px",
+                          }}
+                        >
+                          <span>{card.buttonIcon}</span>
+                          {card.buttonText}
+                        </Button>
                       </a>
                     </Card.Body>
                   </Card>
