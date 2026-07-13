@@ -9,7 +9,7 @@ export const bentoItems = [
     color: "#2ecc71",
     element: (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-        Author of 4 research papers and 1 patent in computer science fields.
+        Author of 4 research papers and 3 patent in computer science & related fields.
       </div>
     ),
     width: 2,
@@ -58,7 +58,7 @@ export const bentoItems = [
     color: "#9b59b6",
     element: (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-        Completed Diploma in Computer Engineering at Shri Bhagubhai Mafatlal Polytechnic.
+        Winner at Hack NYU - 24hr Hackathon.
       </div>
     ),
     width: 1,
@@ -70,7 +70,7 @@ export const bentoItems = [
     color: "#f39c12",
     element: (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-        Average typing speed of 88 WPM, with a peak of 126 WPM.
+        Average typing speed of 88 WPM, with a peak of 131 WPM.
       </div>
     ),
     width: 1,
@@ -82,7 +82,7 @@ export const bentoItems = [
     color: "#f39c12",
     element: (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-        I have completed more than a year doing interships.
+        I have completed over 1.5 years of experience through five diverse internships.
       </div>
     ),
     width: 1,
@@ -143,7 +143,7 @@ export const bentoItems = [
     color: "#e67e22",
     element: (
       <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
-        Conducted a seminar at Bhagubhai Mafatlal Polytechnic and mentored juniors.
+        Conducted seminars to mentor juniors and help them grow :)
       </div>
     ),
     width: 1,

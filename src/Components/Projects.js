@@ -26,6 +26,9 @@ import landbot from "../assets/img/landbot.jpg"
 import sih2022 from "../assets/img/sih2022.jpg"
 import smarthome from "../assets/img/smarthome.jpg"
 import sociopedia from "../assets/img/sociopedia.jpg"
+import pipelineRobotImage from "../assets/img/pipelineRobotImage.jpg"
+import whatsappWebLogger from "../assets/img/whatsappWebLogger.jpg"
+import spinnerClawImage from "../assets/img/spinnerClawImage.jpg"
 
 
 
@@ -34,6 +37,51 @@ import { Spotify, Wordpress } from "react-bootstrap-icons";
 import { IconVaccine } from "@tabler/icons-react";
 
 const cardData = [
+  {
+    header: "Patented Project (202521045231)",
+    title: "A Pipeline Traversing Robot",
+    text: "A Pipeline Traversing Robot capable of moving both horizontally and vertically through pipelines, using smart sensors and obstacle-avoidance mechanisms.",
+    listItems: [
+      "Designed a robot that uses castor wheels and strong magnetic adhesion to traverse vertical and horizontal pipelines.",
+      "Integrated gas and temperature-humidity sensors for real-time leak detection and environmental monitoring.",
+      "Implemented ultrasonic proximity sensors and imaging for autonomous obstacle avoidance and visual inspection.",
+    ],
+    buttonText: "View Patent", // Text for the button
+    buttonIcon: "🤖", // Example emoji icon, replace with your logo
+    buttonLink: "https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus",
+    tags: ["#Patent", "#IoT", "#Robotics", "#SensorFusion", "#Innovation"], // Tags for pinning
+    imageUrl: pipelineRobotImage, // Replace with actual image URLs
+  },
+  {
+    header: "Nuvama Internship Project",
+    title: "WhatsApp Web Logger",
+    text: "Built a browser-based automation tool that logs all incoming WhatsApp Web messages—including text, images, videos, and documents—and automatically stores them to your Drive.",
+    listItems: [
+      "Captured and logged all incoming chats, media, and documents in real time using browser script injection.",
+      "Integrated with One Drive API to automatically store and organize logged content securely.",
+      "Implemented a smart diff-check to log only new, unseen messages, optimizing storage and avoiding redundancy.",
+    ],
+    buttonText: "View Code", // Text for the button
+    buttonIcon: "💬", // Example emoji icon, replace with your logo
+    buttonLink: "https://github.com/Shashwatshah02/Whatsap-web-chat-logger",
+    tags: ["#JavaScript", "#Automation", "#API", "#Security", "#WhatsAppWeb"], // Tags for pinning
+    imageUrl: whatsappWebLogger, // Replace with actual image URLs
+  },
+  {
+    header: "Design Patent (458534-001)",
+    title: "Adjustable fidget spinner base for pipe Climbing",
+    text: "Secured a published design patent for a unique fidget spinner–based claw mechanism that enables efficient vertical and angular pipe traversal. The design optimizes grip, stability, and movement for compact robots navigating industrial environments.",
+    listItems: [
+      "Developed a mechanical design using a fidget spinner–style claw for seamless pipe climbing.",
+      "Enhanced robot stability and traction during vertical traversal through controlled angular grip points.",
+      "Filed and published the design patent under the Indian Patent Office to protect the innovation.",
+    ],
+    buttonText: "View Design Patent", // Text for the button
+    buttonIcon: "🛠️", // Example emoji icon, replace with your logo
+    buttonLink: "https://search.ipindia.gov.in/DesignApplicationStatus/",
+    tags: ["#Patent", "#MechanicalDesign", "#Robotics", "#Innovation", "#PipeClimbing"], // Tags for pinning
+    imageUrl: spinnerClawImage, // Replace with actual image URLs
+  },
   {
     header: "Smart India Hackathon 2024",
     title: "EcoVahak - India Post Sustainability !",
