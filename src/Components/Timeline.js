@@ -40,6 +40,13 @@ const educationData = [
 
 const internshipData = [
   {
+    date: "Jun 2026 - Aug 2026",
+    title: "Automation Developer Intern",
+    subtitle: "UiPath",
+    description:
+      "Built client-facing RPA, Document Understanding, and Agentic AI automation solutions with UiPath Studio, including multi-agent orchestration pipelines and UiPath's internal project estimation platform using React, TypeScript, and Data Fabric.",
+  },
+  {
     date: "Sept 2025 - Present",
     title: "Graduate Assistant - Computer Eng. Labs",
     subtitle: "New York University",

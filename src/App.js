@@ -1,7 +1,6 @@
-import MyBentoGrid, {MybentoGrid} from "./Components/MyBentoGrid";
+import MyBentoGrid from "./Components/MyBentoGrid";
 import "./App.css";
 import Banner from "./Components/Banner";
-import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
 import Projects from "./Components/Projects";

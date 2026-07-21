@@ -29,6 +29,9 @@ import sociopedia from "../assets/img/sociopedia.jpg"
 import pipelineRobotImage from "../assets/img/pipelineRobotImage.jpg"
 import whatsappWebLogger from "../assets/img/whatsappWebLogger.jpg"
 import spinnerClawImage from "../assets/img/spinnerClawImage.jpg"
+import mealieCard from "../assets/img/mealie-card.svg"
+import dnaStorageCard from "../assets/img/dna-storage-card.svg"
+import uipathCard from "../assets/img/uipath-card.svg"
 
 
 
@@ -37,6 +40,50 @@ import { Spotify, Wordpress } from "react-bootstrap-icons";
 import { IconVaccine } from "@tabler/icons-react";
 
 const cardData = [
+  {
+    header: "Personal MLOps Project",
+    title: "Mealie Recipe Recommender",
+    text: "Built an end-to-end ALS collaborative filtering training pipeline on Chameleon Cloud, trained on 1.1M+ interactions from the Food.com dataset to power personalized recipe recommendations inside the Mealie web application.",
+    listItems: [
+      "Built an ALS collaborative filtering pipeline trained on 1.1M+ Food.com interactions on Chameleon Cloud.",
+      "Tracked 5+ experiments using MLflow with MinIO artifact storage and a PostgreSQL backend.",
+      "Containerized the training stack with Docker and managed model versioning via the MLflow Model Registry.",
+      "Designed a scalable data pipeline turning raw interactions into user-item matrices, served via REST APIs.",
+    ],
+    buttonText: "View Source Code",
+    buttonIcon: "🍲",
+    buttonLink: "https://github.com/Shashwatshah02/mealie_als_training",
+    tags: ["#MachineLearning", "#ALS", "#MLflow", "#Docker", "#RecommenderSystem", "#ChameleonCloud", "#PostgreSQL"],
+    imageUrl: mealieCard,
+  },
+  {
+    header: "Published Research Paper - IEEE ICRETM",
+    title: "Enhancing DNA-Based Data Storage",
+    text: "Authored a research paper addressing random access and error correction challenges in DNA-based data storage systems, accepted at IEEE Explore's ICRETM Conference.",
+    listItems: [
+      "Investigated random-access retrieval techniques for encoded DNA data storage.",
+      "Proposed error correction strategies to improve reliability of DNA-based storage systems.",
+      "Explored the feasibility of DNA as a high-density, long-term data storage medium.",
+    ],
+    buttonText: "View Research Work",
+    buttonIcon: "🧬",
+    buttonLink: "https://github.com/Shashwatshah02/DNA_Storage",
+    tags: ["#DNAStorage", "#Research", "#ErrorCorrection", "#DataStorage", "#IEEE"],
+    imageUrl: dnaStorageCard,
+  },
+  {
+    header: "UiPath Internship - Automation Developer",
+    title: "RPA, Agentic AI & Data Fabric at UiPath",
+    text: "Contributed to client-facing automation solutions spanning RPA, Document Understanding (DU), and Agentic AI using UiPath Studio, and helped build UiPath's internal project estimation platform (IXP).",
+    listItems: [
+      "Built and deployed end-to-end RPA workflows and multi-agent orchestration pipelines with API integrations for enterprise clients.",
+      "Worked on Document Understanding (DU) models for automated data extraction from documents.",
+      "Contributed to UiPath's internal project estimation platform (IXP), building features for estimate creation, tracking, and validation using React and TypeScript.",
+      "Used UiPath Data Fabric to model and manage structured data powering automation and agentic workflows.",
+    ],
+    tags: ["#UiPath", "#RPA", "#AgenticAI", "#DocumentUnderstanding", "#DataFabric", "#React", "#TypeScript"],
+    imageUrl: uipathCard,
+  },
   {
     header: "Patented Project (202521045231)",
     title: "A Pipeline Traversing Robot",
@@ -439,29 +486,31 @@ export default function Projects() {
                       ))}
                     </Card.Footer>
                     {/* Button Section */}
-                    <Card.Body
-                      style={{
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "flex-end",
-                        marginTop: "auto",
-                      }}
-                    >
-                    <a href={card.buttonLink}>
-                      <Button
-                        variant="primary"
+                    {card.buttonLink && (
+                      <Card.Body
                         style={{
                           display: "flex",
-                          alignItems: "center",
                           justifyContent: "center",
-                          gap: "5px",
+                          alignItems: "flex-end",
+                          marginTop: "auto",
                         }}
                       >
-                        <span>{card.buttonIcon}</span>
-                        {card.buttonText}
-                      </Button>
-                      </a>
-                    </Card.Body>
+                      <a href={card.buttonLink}>
+                        <Button
+                          variant="primary"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: "5px",
+                          }}
+                        >
+                          <span>{card.buttonIcon}</span>
+                          {card.buttonText}
+                        </Button>
+                        </a>
+                      </Card.Body>
+                    )}
                   </Card>
                 </Col>
               ))}
