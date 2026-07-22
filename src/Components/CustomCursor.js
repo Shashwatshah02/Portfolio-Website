@@ -6,8 +6,7 @@ const INTERACTIVE_SELECTOR = "a, button, input, textarea, .btn-antique";
 
 export default function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
-  const ringRef = useRef(null);
-  const dotRef = useRef(null);
+  const cursorRef = useRef(null);
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
@@ -20,36 +19,33 @@ export default function CustomCursor() {
 
     document.body.classList.add("cursor-active");
 
-    let ringX = window.innerWidth / 2;
-    let ringY = window.innerHeight / 2;
-    let targetX = ringX;
-    let targetY = ringY;
+    let cursorX = window.innerWidth / 2;
+    let cursorY = window.innerHeight / 2;
+    let targetX = cursorX;
+    let targetY = cursorY;
     let raf;
 
     const onMove = (e) => {
       targetX = e.clientX;
       targetY = e.clientY;
-      if (dotRef.current) {
-        dotRef.current.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate(-50%, -50%)`;
-      }
     };
 
     const onOver = (e) => {
       if (e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
-        ringRef.current && ringRef.current.classList.add("cursor-ring-active");
+        cursorRef.current && cursorRef.current.classList.add("cursor-arrow-active");
       }
     };
     const onOut = (e) => {
       if (e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
-        ringRef.current && ringRef.current.classList.remove("cursor-ring-active");
+        cursorRef.current && cursorRef.current.classList.remove("cursor-arrow-active");
       }
     };
 
     const tick = () => {
-      ringX += (targetX - ringX) * 0.16;
-      ringY += (targetY - ringY) * 0.16;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0) translate(-50%, -50%)`;
+      cursorX += (targetX - cursorX) * 0.18;
+      cursorY += (targetY - cursorY) * 0.18;
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
       }
       raf = requestAnimationFrame(tick);
     };
@@ -71,9 +67,22 @@ export default function CustomCursor() {
   if (!enabled) return null;
 
   return (
-    <>
-      <div ref={dotRef} className="custom-cursor-dot" />
-      <div ref={ringRef} className="custom-cursor-ring" />
-    </>
+    <svg
+      ref={cursorRef}
+      className="custom-cursor-arrow"
+      width="30"
+      height="38"
+      viewBox="0 0 30 38"
+      fill="none"
+      aria-hidden="true"
+    >
+      <path
+        className="cursor-arrow-body"
+        d="M3 2.5 5.5 31l7.7-8.3 6 12.3 6.2-3-6.1-12.3 10.2-.8L3 2.5Z"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path className="cursor-arrow-ornament" d="m10.6 14.5 2.1 2.1-2.1 2.1-2.1-2.1 2.1-2.1Z" />
+    </svg>
   );
 }

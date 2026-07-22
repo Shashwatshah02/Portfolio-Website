@@ -1,44 +1,45 @@
 body.cursor-active,
 body.cursor-active a,
-body.cursor-active button {
+body.cursor-active button,
+body.cursor-active input,
+body.cursor-active textarea {
   cursor: none;
 }
 
-.custom-cursor-dot,
-.custom-cursor-ring {
+.custom-cursor-arrow {
   position: fixed;
   top: 0;
   left: 0;
   pointer-events: none;
   z-index: 10000;
-  border-radius: 50%;
+  overflow: visible;
+  transform-origin: 3px 3px;
+  filter: drop-shadow(1px 2px 1px rgba(28, 23, 18, 0.18));
 }
 
-.custom-cursor-dot {
-  width: 5px;
-  height: 5px;
-  background: var(--color-bronze, #9c7539);
+.cursor-arrow-body {
+  fill: var(--color-parchment, #f6efe0);
+  stroke: var(--color-ink, #1c1712);
+  transition: fill 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
 }
 
-.custom-cursor-ring {
-  width: 32px;
-  height: 32px;
-  border: 1px solid rgba(28, 23, 18, 0.55);
-  transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
-    height 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
-    border-color 0.25s ease, background-color 0.25s ease;
+.cursor-arrow-ornament {
+  fill: var(--color-bronze, #9c7539);
+  transition: fill 0.2s ease;
 }
 
-.custom-cursor-ring.cursor-ring-active {
-  width: 46px;
-  height: 46px;
-  border-color: var(--color-bronze, #9c7539);
-  background-color: rgba(156, 117, 57, 0.08);
+.cursor-arrow-active .cursor-arrow-body {
+  fill: var(--color-bronze, #9c7539);
+  stroke: var(--color-bronze, #9c7539);
+  stroke-width: 2;
+}
+
+.cursor-arrow-active .cursor-arrow-ornament {
+  fill: var(--color-parchment, #f6efe0);
 }
 
 @media (max-width: 900px) {
-  .custom-cursor-dot,
-  .custom-cursor-ring {
+  .custom-cursor-arrow {
     display: none;
   }
 }
