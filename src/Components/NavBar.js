@@ -58,15 +58,16 @@ export default function NavBar() {
               Home
             </Nav.Link>
             <Nav.Link
-              href="#skills"
+              href="#education"
               className={
-                active === "skills" ? "active navbar-link" : "navbar-link"
+                active === "education" ? "active navbar-link" : "navbar-link"
               }
               onClick={() => {
-                activeLink("skills");
+                activeLink("education");
+                setExpanded(false);
               }}
             >
-              Skills
+              Education
             </Nav.Link>
             <Nav.Link
               href="#projects"
@@ -75,6 +76,7 @@ export default function NavBar() {
               }
               onClick={() => {
                 activeLink("projects");
+                setExpanded(false);
               }}
             >
               Projects

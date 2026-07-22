@@ -1,17 +1,175 @@
 .timeline-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
   padding: 110px 20px;
   background-color: var(--color-parchment);
   position: relative;
+}
+
+/* Education — compact horizontal timeline */
+.education-section {
+  padding: 118px 20px 96px;
+  background: var(--color-parchment-dark);
+  overflow: hidden;
+  position: relative;
+}
+
+.education-heading {
+  max-width: 600px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.education-heading .section-eyebrow {
+  margin-bottom: 13px;
+}
+
+.education-heading h2 {
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 600;
+  margin: 0;
+}
+
+.education-heading p {
+  margin: 15px 0 0;
+  color: var(--color-muted-on-light);
+  font-size: 15px;
+}
+
+.education-scroll {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.education-track {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.education-track::before {
+  content: "";
+  position: absolute;
+  top: 33px;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: rgba(28, 23, 18, 0.28);
+}
+
+.education-milestone {
+  min-width: 0;
+  position: relative;
+}
+
+.education-card {
+  height: 164px;
+  padding: 58px 20px 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  background: rgba(246, 239, 224, 0.52);
+  border: 1px solid rgba(28, 23, 18, 0.18);
+  box-shadow: 0 8px 22px rgba(28, 23, 18, 0.05);
+  outline: none;
+  transition: height 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.education-marker {
+  position: absolute;
+  top: 26px;
+  left: 20px;
+  z-index: 1;
+  width: 15px;
+  height: 15px;
+  background: var(--color-parchment-dark);
+  border: 3px solid var(--color-bronze);
+  border-radius: 50%;
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.education-card time {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--color-bronze-dark);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.education-card h3 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 600;
+  line-height: 1.05;
+}
+
+.education-school {
+  margin: 8px 0 0;
+  color: var(--color-ink-faint);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.education-details {
+  max-height: 0;
+  margin-top: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, margin-top 0.35s ease, opacity 0.25s ease;
+}
+
+.education-details > span {
+  color: var(--color-bronze-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.education-details p {
+  margin: 8px 0 0;
+  color: var(--color-ink-faint);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.education-card:hover,
+.education-card:focus-visible {
+  z-index: 2;
+  height: 330px;
+  transform: translateY(-8px) scale(1.035);
+  background: var(--color-parchment);
+  border-color: var(--color-bronze);
+  box-shadow: 0 20px 35px rgba(28, 23, 18, 0.16);
+}
+
+.education-card:hover .education-marker,
+.education-card:focus-visible .education-marker {
+  background: var(--color-bronze);
+  transform: scale(1.16);
+}
+
+.education-card:hover .education-details,
+.education-card:focus-visible .education-details {
+  max-height: 170px;
+  margin-top: 18px;
+  opacity: 1;
 }
 
 .timeline-column {
   flex: 1 1;
   min-width: 320px;
   max-width: 600px;
+  margin: 0 auto;
   padding: 0 10px;
 }
 
@@ -97,9 +255,33 @@
 
 @media (max-width: 768px) {
   .timeline-section {
-    flex-direction: column;
-    align-items: center;
     padding: 70px 10px;
+  }
+
+  .education-section {
+    padding: 84px 0 72px;
+  }
+
+  .education-heading {
+    padding: 0 20px;
+    margin-bottom: 38px;
+  }
+
+  .education-scroll {
+    overflow-x: auto;
+    padding: 0 20px 20px;
+    scrollbar-color: var(--color-bronze) transparent;
+  }
+
+  .education-track {
+    width: max-content;
+    grid-template-columns: repeat(4, 248px);
+  }
+
+  .education-card:hover,
+  .education-card:focus-visible {
+    height: 340px;
+    transform: translateY(-4px);
   }
 
   .timeline-column {

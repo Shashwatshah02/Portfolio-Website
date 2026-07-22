@@ -9,16 +9,16 @@ import "./Timeline.css";
 
 const educationData = [
   {
-    date: "Fall 2025",
+    date: "2025 - 2027",
     title: "MS - Computer Engineering",
     subtitle: "New York University",
     description:
-      "Will pursue advanced courses in Hardware and Software related fields under leading faculty.",
+      "GPA: 3.73 | Pursuing advanced hardware and software courses under leading faculty.",
   },
   {
     date: "2022 - 2025",
     title: "B.Tech - Computer Engineering",
-    subtitle: "Dwarkadas J. Sanghvi College of Engineering",
+    subtitle: "Dwarkadas J. Sanghvi CoE",
     description:
       "GPA: 9.35 | Focused on detailed learning to find my specific niche. Multiple participations in student chapters and events",
   },
@@ -99,6 +99,37 @@ const cardVariants = {
   }),
 };
 
+function EducationTimeline() {
+  return (
+    <section id="education" className="education-section grain-overlay">
+      <div className="education-heading">
+        <span className="section-eyebrow">Education</span>
+        <h2>Built on curiosity</h2>
+        <p>Hover over a milestone to uncover the full story.</p>
+      </div>
+
+      <div className="education-scroll" aria-label="Education timeline">
+        <ol className="education-track">
+          {educationData.map((item, index) => (
+            <li key={item.title} className="education-milestone">
+              <article className="education-card" tabIndex="0">
+                <span className="education-marker" aria-hidden="true" />
+                <time>{item.date}</time>
+                <h3>{item.title}</h3>
+                <p className="education-school">{item.subtitle}</p>
+                <div className="education-details">
+                  <span>Details</span>
+                  <p>{item.description}</p>
+                </div>
+              </article>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 function TimelineColumn({ title, items }) {
   const shouldReduceMotion = useReducedMotion();
   return (
@@ -144,9 +175,11 @@ function TimelineColumn({ title, items }) {
 
 export default function Timeline() {
   return (
-    <div className="timeline-section grain-overlay">
-      <TimelineColumn title="Education" items={educationData} />
-      <TimelineColumn title="Internships" items={internshipData} />
-    </div>
+    <>
+      <EducationTimeline />
+      <section className="timeline-section grain-overlay">
+        <TimelineColumn title="Internships" items={internshipData} />
+      </section>
+    </>
   );
 }
