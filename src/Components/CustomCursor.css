@@ -1,0 +1,44 @@
+body.cursor-active,
+body.cursor-active a,
+body.cursor-active button {
+  cursor: none;
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+}
+
+.custom-cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--color-bronze, #9c7539);
+}
+
+.custom-cursor-ring {
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(28, 23, 18, 0.55);
+  transition: width 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+    height 0.25s cubic-bezier(0.22, 0.61, 0.36, 1),
+    border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.custom-cursor-ring.cursor-ring-active {
+  width: 46px;
+  height: 46px;
+  border-color: var(--color-bronze, #9c7539);
+  background-color: rgba(156, 117, 57, 0.08);
+}
+
+@media (max-width: 900px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none;
+  }
+}

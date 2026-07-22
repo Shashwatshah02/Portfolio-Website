@@ -2,12 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import header from "../assets/img/header-img.svg";
-import "animate.css";
-import TrackVisibility from "react-on-screen";
-import { isVisible } from "@testing-library/user-event/dist/utils";
+import useReveal from "../hooks/useReveal";
+import useParallax from "../hooks/useParallax";
 
 export default function Banner() {
+  const [contentRef, contentClass] = useReveal({ threshold: 0.05 });
+  const [dividerRef, dividerClass] = useReveal({ threshold: 0.4 });
+  const parallaxRef = useParallax(14);
   const toRotate = ["Hi There! 👋'", "I am Shashwat Shah!'"];
   const [loopNo, setLoopNo] = useState(0);
   const [deleting, setDeleting] = useState(false);
@@ -45,35 +46,33 @@ export default function Banner() {
     }
   };
   return (
-    <section className="banner" id="home">
+    <section
+      ref={parallaxRef}
+      className="banner grain-overlay parallax-layer"
+      id="home"
+    >
       <Container>
-        <Row className="align-items-center">
-          <Col xs={12} lg={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
-                  <span className="tagline">Engineering my story, beyond the screen</span>
-                  <h1>
-                    '<span className="wrap">{text}</span>
-                  </h1>
-                  <p>
-                    I'm Shashwat, a Computer Engineering Master's student at NYU and a CS grad. I build across Web & App Dev, IoT, and AI/ML, backed by 5 internships, 4 research papers, and 3 patents. Beyond tech, I'm a national-level artistic skater and stage actor, bringing a unique blend of precision and creativity to every challenge.
-                  </p>
-                  <a href="mailto:shashwatshah02@gmail.com">
-                    <button>
-                      <span style={{display:'flex'}}>Lets Connect <ArrowRightCircle size={25} /></span>
-                    </button>
-                  </a>
+        <Row className="justify-content-center">
+          <Col xs={12} lg={9} xl={8} className="text-center">
+            <div ref={contentRef} className={contentClass}>
+              <div className="hero-ornament">
+                <div ref={dividerRef} className={`ornament-divider ${dividerClass}`}>
+                  <span />
                 </div>
-              )}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} lg={6} xl={5}>
-            <img src={header} alt="Header-Image" className="header" />
+              </div>
+              <span className="tagline">Engineering my story, beyond the screen</span>
+              <h1>
+                '<span className="wrap">{text}</span>
+              </h1>
+              <p className="mx-auto">
+                I'm Shashwat, a Computer Engineering Master's student at NYU and a CS grad. I build across Web & App Dev, IoT, and AI/ML, backed by 5 internships, 4 research papers, and 3 patents. Beyond tech, I'm a national-level artistic skater and stage actor, bringing a unique blend of precision and creativity to every challenge.
+              </p>
+              <a href="mailto:shashwatshah02@gmail.com">
+                <button className="btn-antique">
+                  <span>Let's Connect</span> <ArrowRightCircle size={18} />
+                </button>
+              </a>
+            </div>
           </Col>
         </Row>
       </Container>

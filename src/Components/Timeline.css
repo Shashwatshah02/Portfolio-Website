@@ -3,13 +3,9 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 20px;
-  background: url("https://www.transparenttextures.com/patterns/stardust.png"),
-    #000;
-  background-attachment: fixed;
-  background-size: cover;
-  -webkit-backdrop-filter: blur(2px);
-  backdrop-filter: blur(2px);
+  padding: 110px 20px;
+  background-color: var(--color-parchment);
+  position: relative;
 }
 
 .timeline-column {
@@ -21,46 +17,60 @@
 
 .vertical-timeline-element-date {
   padding: 0 5px;
+  font-family: var(--font-sans) !important;
+  color: var(--color-muted-on-light) !important;
+  letter-spacing: 0.06em;
 }
 
 .timeline-title {
   text-align: center;
-  color: #fff;
-  font-size: 30px;
-  font-weight: 700;
-  margin-bottom: 25px;
-  text-shadow: 0 0 8px #0ff;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
 .timeline-card {
-  background: rgba(0, 255, 255, 0.07);
-  -webkit-backdrop-filter: blur(16px);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 0, 255, 0.5);
-  border-radius: 20px;
-  padding: 20px;
-  color: #fff;
-  box-shadow: 0 12px 40px rgba(255, 0, 255, 0.4), 0 0 12px #00ffffaa;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  background: var(--color-parchment-dark);
+  border: var(--border-hairline);
+  border-radius: 2px;
+  padding: 24px;
+  color: var(--color-ink);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 20px rgba(255, 0, 255, 0.1);
-  border: 1px solid rgba(255, 0, 255, 0.5);
+  transform: translateY(-4px);
+  border-color: var(--color-bronze);
 }
 
 .timeline-card h3 {
-  margin: 0 0 10px;
-  font-size: 20px;
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: 22px;
   font-weight: 600;
-  color: #fcf;
+  color: var(--color-ink);
 }
 
-.timeline-card p {
+.timeline-subtitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-bronze-dark);
+  margin: 0 0 10px !important;
+}
+
+.timeline-description {
+  font-family: var(--font-sans);
   margin: 0;
-  font-size: 16px;
-  color: #ccc;
+  font-size: 15px;
+  line-height: 1.6em;
+  color: var(--color-ink-faint);
 }
 
 .emoji-icon {
@@ -69,30 +79,27 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  font-size: 24px;
-  animation: pulse 2s infinite;
+}
+.emoji-icon .icon-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-bronze);
 }
 
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    text-shadow: 0 0 8px #0ff;
-  }
-  50% {
-    transform: scale(1.1);
-    text-shadow: 0 0 12px #f0f;
-  }
-  100% {
-    transform: scale(1);
-    text-shadow: 0 0 8px #0ff;
-  }
+/* react-vertical-timeline-component base overrides */
+.vertical-timeline::before {
+  background: rgba(28, 23, 18, 0.2) !important;
+}
+.vertical-timeline-element-icon {
+  box-shadow: 0 0 0 4px var(--color-parchment), inset 0 0 0 1px rgba(28, 23, 18, 0.2) !important;
 }
 
 @media (max-width: 768px) {
   .timeline-section {
     flex-direction: column;
     align-items: center;
-    padding: 40px 10px;
+    padding: 70px 10px;
   }
 
   .timeline-column {

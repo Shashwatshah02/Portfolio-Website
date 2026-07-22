@@ -1,74 +1,80 @@
 /* Container Styling */
 .bento-container {
-  padding: 20px;
-  background-color: #121212; /* Dark background */
-  color: #ffffff; /* Light text color */
-  box-sizing: border-box; /* Include padding in width/height calculations */
+  padding: 110px 20px;
+  background-color: var(--color-ink);
+  color: var(--color-parchment);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.bento-container h2 {
+  text-align: center;
+  color: var(--color-parchment);
+  font-family: var(--font-serif);
+  font-size: 44px;
+  font-weight: 600;
+  margin-bottom: 50px;
 }
 
 /* Grid Container Styling */
 .bento-grid-container {
   display: grid;
-  padding: 0 300px !important;
-  gap: 20px; /* Spacing between items */
-  grid-template-columns: repeat(3, 1fr) !important; /* 3 columns by default */
-  margin: 0 auto; /* Center the grid */
+  padding: 0 12% !important;
+  gap: 18px;
+  grid-template-columns: repeat(3, 1fr) !important;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
 /* Grid Item Styling */
 .bento-element {
-  /* background-color: #1e1e1e; Dark background for boxes */
-  color: #ffffff; /* Light text color */
-  /* border: 1px solid #dee2e6; Light border */
-  border-radius: 8px; /* Smooth rounded corners */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Stronger shadow */
-  padding: 15px;
+  background-color: rgba(246, 239, 224, 0.04);
+  color: var(--color-parchment);
+  border: 1px solid rgba(246, 239, 224, 0.16);
+  border-radius: 2px;
+  padding: 22px;
   display: flex;
-  flex-direction: column; /* Vertical stacking */
-  justify-content: flex-start; /* Align content to the top */
-  align-items: center; /* Center horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  overflow: hidden; /* Prevent overflow */
-  word-wrap: break-word; /* Break long words */
-  overflow-wrap: anywhere; /* Additional safeguard for long unbroken text */
-  min-height: 100px; /* Ensure consistent height */
-  height: auto; /* Allow boxes to grow with content */
-  box-sizing: border-box; /* Include padding in size calculations */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  min-height: 100px;
+  height: auto;
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-
-/* Safeguard Long Text Overflow */
 .bento-element p {
   margin: 0;
-  line-height: 1.5; /* Improve readability */
-  font-size: 14px; /* Ensure proper sizing for content */
+  line-height: 1.6;
+  font-size: 14.5px;
+  color: var(--color-muted-on-dark);
 }
 
-/* Hover Effect */
 .bento-element:hover {
-  transform: translateY(-5px); /* Lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  transform: translateY(-4px);
+  border-color: var(--color-bronze);
 }
 
-/* Responsive Design for Mobile (max-width: 768px) */
 @media (max-width: 768px) {
   .bento-grid-container {
     padding: 0 20px !important;
-    grid-template-columns: repeat(1, 1fr) !important; /* Single column layout */
-    gap: 15px; /* Smaller spacing */
+    grid-template-columns: repeat(1, 1fr) !important;
+    gap: 15px;
   }
 
   .bento-element {
-    width: 100%; /* Full width for mobile */
+    width: 100%;
   }
 }
 
-/* Responsive Design for Tablets (max-width: 1200px) */
 @media (max-width: 1200px) {
   .bento-grid-container {
     padding: 0 20px !important;
-    grid-template-columns: repeat(2, 1fr) !important; /* Two columns */
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }

@@ -1,0 +1,183 @@
+/* ==========================================================================
+   Motion system — scroll reveals, parallax, hairline draw-ins,
+   engraved type, hover intent, animated grain.
+   All GPU-friendly (transform/opacity only). Respects prefers-reduced-motion.
+   ========================================================================== */
+
+/* ---- Scroll reveal --------------------------------------------------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+  will-change: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ---- Parallax layer (hero grain/texture) ------------------------------ */
+.banner > .container {
+  position: relative;
+  z-index: 1;
+}
+.parallax-layer::before {
+  transform: translate3d(0, var(--parallax-offset, 0px), 0);
+}
+
+/* ---- Animated grain (barely-perceptible drift) ------------------------ */
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-1.5%, 1%);
+  }
+  50% {
+    transform: translate(1%, -1.5%);
+  }
+  75% {
+    transform: translate(-1%, -1%);
+  }
+}
+.grain-overlay::before {
+  animation: grain-shift 10s steps(8) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay::before {
+    animation: none;
+  }
+}
+
+/* ---- Faint topographic contour texture (hero only) --------------------- */
+.banner {
+  --topo: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><g fill='none' stroke='%231c1712' stroke-width='0.6'><path d='M-10,20 Q40,0 90,20 T190,20'/><path d='M-10,60 Q40,40 90,60 T190,60'/><path d='M-10,100 Q40,80 90,100 T190,100'/><path d='M-10,140 Q40,120 90,140 T190,140'/><path d='M-10,180 Q40,160 90,180 T190,180'/></g></svg>");
+}
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: var(--topo);
+  background-size: 340px 340px;
+  z-index: 0;
+}
+
+/* ---- Hairline ornament that "draws itself" in on scroll --------------- */
+.ornament-divider::before,
+.ornament-divider::after {
+  transform: scaleX(0);
+  transition: transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+.ornament-divider::before {
+  transform-origin: right;
+}
+.ornament-divider::after {
+  transform-origin: left;
+}
+.ornament-divider.reveal-visible::before,
+.ornament-divider.reveal-visible::after {
+  transform: scaleX(1);
+}
+.ornament-divider span {
+  opacity: 0;
+  transform: rotate(45deg) scale(0.3);
+  transition: opacity 0.45s ease 0.55s, transform 0.45s ease 0.55s;
+}
+.ornament-divider.reveal-visible span {
+  opacity: 1;
+  transform: rotate(45deg) scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ornament-divider::before,
+  .ornament-divider::after,
+  .ornament-divider span {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .ornament-divider span {
+    transform: rotate(45deg) !important;
+  }
+}
+
+/* ---- Engraved heading type --------------------------------------------- */
+.banner h1,
+.project h2 {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6), 0 -1px 1px rgba(28, 23, 18, 0.22);
+}
+.bento-container h2,
+.contact h2 {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.55), 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* ---- Chisel-stroke underline on nav links ------------------------------ */
+nav.navbar .navbar-nav .nav-link.navbar-link {
+  position: relative;
+}
+nav.navbar .navbar-nav .nav-link.navbar-link::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 2px;
+  height: 1px;
+  background: var(--color-bronze);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+nav.navbar .navbar-nav a.nav-link.navbar-link:hover::after,
+nav.navbar .navbar-nav a.nav-link.navbar-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ---- Micro-interactions: buttons + social icons ------------------------ */
+.btn-antique {
+  transition: color 0.35s ease, transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1),
+    letter-spacing 0.35s ease;
+}
+.btn-antique:hover {
+  transform: translateY(-2px);
+  letter-spacing: 0.17em;
+}
+.social-icon a {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.social-icon a:hover {
+  transform: translateY(-3px);
+}
+
+/* ---- Project card image: sepia-to-clarity restore on hover ------------- */
+.project-card {
+  overflow: hidden;
+}
+.project-card-img {
+  transition: filter 0.7s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.project-card:hover .project-card-img {
+  filter: sepia(0.05) saturate(1) contrast(1) brightness(1);
+  transform: scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card:hover .project-card-img {
+    transform: none;
+  }
+}

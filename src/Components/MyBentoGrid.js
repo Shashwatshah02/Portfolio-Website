@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { BentoGrid } from "react-bento";
 import { bentoItems } from "./BentoItems";
+import useReveal from "../hooks/useReveal";
 import "./bentoGrid.css";
 
 const MyBentoGrid = () => {
   const [gridCols, setGridCols] = useState(3);
   const [rowHeight, setRowHeight] = useState("auto");
+  const [headingRef, headingClass] = useReveal({ threshold: 0.4 });
 
   // Update grid settings based on window size
   const updateGridSettings = () => {
     const width = window.innerWidth;
     if (width <= 768) {
-      setGridCols(1); // One column for mobile devices
-      setRowHeight("auto"); // Auto height for flexibility
+      setGridCols(1);
+      setRowHeight("auto");
     } else if (width <= 900) {
-      setGridCols(2); // Two columns for tablets
-      setRowHeight(100); // Set a fixed row height
+      setGridCols(2);
+      setRowHeight(100);
     } else {
-      setGridCols(3); // Three columns for large screens
-      setRowHeight(120); // Set a fixed row height
+      setGridCols(3);
+      setRowHeight(120);
     }
   };
 
@@ -29,8 +31,8 @@ const MyBentoGrid = () => {
   }, []);
 
   return (
-    <div className="bento-container contact">
-      <h2>A Peek Into My Life</h2>
+    <div className="bento-container contact grain-overlay grain-overlay-dark">
+      <h2 ref={headingRef} className={headingClass}>A Peek Into My Life</h2>
       <BentoGrid
         items={bentoItems}
         gridCols={gridCols}
@@ -39,7 +41,7 @@ const MyBentoGrid = () => {
           container: "bento-grid-container",
           elementContainer: "bento-element",
         }}
-        
+
       />
     </div>
   );

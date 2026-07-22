@@ -3,10 +3,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState, useEffect } from "react";
-import logo from "../assets/img/Shashwat Logo.png";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import { Linkedin, Github, Instagram } from "react-bootstrap-icons";
 
 export default function NavBar() {
   const [active, setActive] = useState("home");
@@ -41,12 +38,8 @@ export default function NavBar() {
       expanded={expanded}
     >
       <Container>
-        <Navbar.Brand href="#home" className="me-auto">
-          <img
-            src={logo}
-            alt="Logo"
-            style={{ width: "180px", height: "100px" }}
-          />
+        <Navbar.Brand href="#home" className="me-auto navbar-wordmark">
+          Shashwat<span className="dot">.</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
@@ -90,18 +83,18 @@ export default function NavBar() {
           <span className="navbar-text">
             <div className="social-icon">
               <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/">
-                <img src={navIcon1} alt="" />
+                <Linkedin size={16} />
               </a>
               <a href="https://github.com/Shashwatshah02">
-                <img src={navIcon2} alt="" />
+                <Github size={16} />
               </a>
               <a href="https://www.instagram.com/shashwatshah02/">
-                <img src={navIcon3} alt="" />
+                <Instagram size={16} />
               </a>
             </div>
             <a href="mailto:shashwatshah02@gmail.com">
-              <button className="vvd">
-                <span>Lets Connect</span>
+              <button className="btn-antique">
+                <span>Let's Connect</span>
               </button>
             </a>
           </span>

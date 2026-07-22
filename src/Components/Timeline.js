@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -100,18 +100,19 @@ const cardVariants = {
 };
 
 function TimelineColumn({ title, items }) {
+  const shouldReduceMotion = useReducedMotion();
   return (
     <div className="timeline-column">
       <h2 className="timeline-title">{title}</h2>
-      <VerticalTimeline lineColor="#00ffff">
+      <VerticalTimeline lineColor="rgba(28, 23, 18, 0.2)">
         {items.map((item, index) => (
           <VerticalTimelineElement
             key={index}
             date={item.date}
-            icon={<div className="emoji-icon">🚀</div>}
+            icon={<div className="emoji-icon"><span className="icon-dot" /></div>}
             iconStyle={{
-              background: "rgba(255, 255, 255, 0.05)",
-              boxShadow: "0 0 10px #00ffff66",
+              background: "#f6efe0",
+              boxShadow: "none",
             }}
             contentStyle={{
               background: "transparent",
@@ -123,8 +124,8 @@ function TimelineColumn({ title, items }) {
             <motion.div
               className="timeline-card"
               variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial={shouldReduceMotion ? false : "hidden"}
+              whileInView={shouldReduceMotion ? undefined : "visible"}
               viewport={{ once: true }}
               custom={index}
             >
@@ -143,7 +144,7 @@ function TimelineColumn({ title, items }) {
 
 export default function Timeline() {
   return (
-    <div className="timeline-section">
+    <div className="timeline-section grain-overlay">
       <TimelineColumn title="Education" items={educationData} />
       <TimelineColumn title="Internships" items={internshipData} />
     </div>

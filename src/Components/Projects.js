@@ -1,9 +1,8 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ProjectCards from "./ProjectCards";
-import colorSharp2 from "../assets/img/color-sharp2.png";
 import earthtag from "../assets/img/earthtag.jpg";
 import projImg2 from "../assets/img/cflex.jpg";
 import projImg3 from "../assets/img/spotify.jpg";
@@ -38,6 +37,7 @@ import uipathCard from "../assets/img/uipath-card.svg"
 import { useState } from "react";
 import { Spotify, Wordpress } from "react-bootstrap-icons";
 import { IconVaccine } from "@tabler/icons-react";
+import useReveal from "../hooks/useReveal";
 
 const cardData = [
   {
@@ -396,144 +396,94 @@ const cardData = [
 
 ];
 
+function ProjectCard({ card, index }) {
+  const [ref, className] = useReveal();
+  return (
+    <Col xs={12} sm={12} md={6} lg={4}>
+      <Card
+        ref={ref}
+        className={`project-card ${className}`}
+        style={{ "--reveal-delay": `${(index % 3) * 100}ms` }}
+      >
+        <Card.Header className="project-card-header">
+          {card.header}
+        </Card.Header>
+        <Card.Img
+          variant="top"
+          src={card.imageUrl}
+          className="project-card-img"
+        />
+        <Card.Body className="text-center">
+          <Card.Title className="project-card-title">
+            {card.title}
+          </Card.Title>
+          <Card.Text className="project-card-text">{card.text}</Card.Text>
+        </Card.Body>
+        <ListGroup className="list-group-flush">
+          {card.listItems.map((item, idx) => (
+            <ListGroup.Item key={idx}>{item}</ListGroup.Item>
+          ))}
+        </ListGroup>
+        {/* Tags Section */}
+        <Card.Footer className="d-flex flex-wrap justify-content-center gap-2 bg-transparent border-0 py-3">
+          {card.tags.map((tag, idx) => (
+            <span key={idx} className="project-tag">
+              {tag}
+            </span>
+          ))}
+        </Card.Footer>
+        {/* Button Section */}
+        {card.buttonLink && (
+          <Card.Body className="d-flex justify-content-center pt-0">
+            <a href={card.buttonLink}>
+              <button className="btn-antique">
+                <span>{card.buttonIcon}</span>
+                <span>{card.buttonText}</span>
+              </button>
+            </a>
+          </Card.Body>
+        )}
+      </Card>
+    </Col>
+  );
+}
+
 export default function Projects() {
   const [visibleCards, setVisibleCards] = useState(6); // Number of cards initially displayed
+  const [headingRef, headingClass] = useReveal();
 
   const handleLoadMore = () => {
     setVisibleCards((prev) => prev + 6); // Load 6 more cards on click
   };
   return (
-    <section className="project" id="projects">
+    <section className="project grain-overlay" id="projects">
       <Container>
         <Row>
           <Col size={12}>
-            <h2>Latest Projects</h2>
-            <p>
-              Discover the fusion of creativity and technology in my projects,
-              spanning web & app development, AI/ML, IoT, UI/UX design, and
-              more.
-            </p>
+            <div ref={headingRef} className={headingClass}>
+              <div className="section-eyebrow d-block text-center w-100">Selected Work</div>
+              <h2>Latest Projects</h2>
+              <p>
+                Discover the fusion of creativity and technology in my projects,
+                spanning web & app development, AI/ML, IoT, UI/UX design, and
+                more.
+              </p>
+            </div>
             <Row className="g-3">
-              {" "}
-              {/* Reduced gap between cards */}
               {cardData.slice(0, visibleCards).map((card, index) => (
-                <Col xs={12} sm={12} md={6} lg={4} key={index}>
-                  <Card
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      backgroundColor: "transparent",
-                      border: "2px solid white",
-                      borderRadius: "20px",
-                      padding: "10px",
-                      position: "relative",
-                    }}
-                  >
-                    <Card.Header
-                      style={{ color: "white", backgroundColor: "transparent" }}
-                    >
-                      {card.header}
-                    </Card.Header>
-                    <Card.Img variant="top" src={card.imageUrl} />
-                    <Card.Body style={{ color: "white", textAlign: "center" }}>
-                      <Card.Title>{card.title}</Card.Title>
-                      <Card.Text
-                        style={{ color: "white", textAlign: "justify", margin: 0, width: "100%" }}
-                      >
-                        {card.text}
-                      </Card.Text>
-                    </Card.Body>
-                    <ListGroup className="list-group-flush">
-                      {card.listItems.map((item, idx) => (
-                        <ListGroup.Item
-                          key={idx}
-                          style={{
-                            color: "white",
-                            backgroundColor: "transparent",
-                            textAlign: "left",
-                          }}
-                        >
-                          {item}
-                        </ListGroup.Item>
-                      ))}
-                    </ListGroup>
-                    {/* Tags Section */}
-                    <Card.Footer
-                      style={{
-                        backgroundColor: "transparent",
-                        justifyContent: "center",
-                        borderTop: "none",
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "8px",
-                        padding: "10px 0",
-                      }}
-                    >
-                      {card.tags.map((tag, idx) => (
-                        <span
-                          key={idx}
-                          style={{
-                            backgroundColor: "rgba(255, 255, 255, 0.1)",
-                            color: "white",
-                            padding: "5px 10px",
-                            borderRadius: "20px",
-                            boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.2)",
-                            fontSize: "12px",
-                          }}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </Card.Footer>
-                    {/* Button Section */}
-                    {card.buttonLink && (
-                      <Card.Body
-                        style={{
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "flex-end",
-                          marginTop: "auto",
-                        }}
-                      >
-                      <a href={card.buttonLink}>
-                        <Button
-                          variant="primary"
-                          style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            gap: "5px",
-                          }}
-                        >
-                          <span>{card.buttonIcon}</span>
-                          {card.buttonText}
-                        </Button>
-                        </a>
-                      </Card.Body>
-                    )}
-                  </Card>
-                </Col>
+                <ProjectCard card={card} index={index} key={card.title} />
               ))}
             </Row>
             {visibleCards < cardData.length && (
-              <div style={{ textAlign: "center", marginTop: "20px" }}>
-                <Button
-                  onClick={handleLoadMore}
-                  style={{
-                    backgroundColor: "white",
-                    color: "black",
-                    border: "1px solid black",
-                    borderRadius: "10px",
-                  }}
-                >
-                  Load More
-                </Button>
+              <div className="load-more-wrap">
+                <button className="btn-antique" onClick={handleLoadMore}>
+                  <span>Load More</span>
+                </button>
               </div>
             )}
           </Col>
         </Row>
       </Container>
-      <img className="background-image-right" src={colorSharp2} alt="" />
     </section>
   );
 }
