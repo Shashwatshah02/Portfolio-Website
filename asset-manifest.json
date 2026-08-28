@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/Portfolio-Website/static/css/main.2f911856.css",
-    "main.js": "/Portfolio-Website/static/js/main.1da96cb0.js",
+    "main.css": "/Portfolio-Website/static/css/main.c98076f9.css",
+    "main.js": "/Portfolio-Website/static/js/main.a7c56d6d.js",
     "static/js/787.749b4a44.chunk.js": "/Portfolio-Website/static/js/787.749b4a44.chunk.js",
     "static/media/experience-treasure-map-v2.png": "/Portfolio-Website/static/media/experience-treasure-map-v2.3ad2a7704a6000f51313.png",
+    "static/media/voice-agent-poc.png": "/Portfolio-Website/static/media/voice-agent-poc.576bddcd2c8dda5007e4.png",
     "static/media/mealie-recommender-project-color.png": "/Portfolio-Website/static/media/mealie-recommender-project-color.d2a62f131ded85ab813a.png",
     "static/media/dna-storage-project-color.png": "/Portfolio-Website/static/media/dna-storage-project-color.39c1255f37f612bb29c9.png",
     "static/media/hero-journey-vignette.png": "/Portfolio-Website/static/media/hero-journey-vignette.64d821ba205394d893bf.png",
@@ -29,12 +30,12 @@
     "static/media/aapkaadhikar.jpg": "/Portfolio-Website/static/media/aapkaadhikar.b34753295621ab3585be.jpg",
     "index.html": "/Portfolio-Website/index.html",
     "static/media/sns-seal.svg": "/Portfolio-Website/static/media/sns-seal.8724c2036423a26ef8bd7d2fcc4f0608.svg",
-    "main.2f911856.css.map": "/Portfolio-Website/static/css/main.2f911856.css.map",
-    "main.1da96cb0.js.map": "/Portfolio-Website/static/js/main.1da96cb0.js.map",
+    "main.c98076f9.css.map": "/Portfolio-Website/static/css/main.c98076f9.css.map",
+    "main.a7c56d6d.js.map": "/Portfolio-Website/static/js/main.a7c56d6d.js.map",
     "787.749b4a44.chunk.js.map": "/Portfolio-Website/static/js/787.749b4a44.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f911856.css",
-    "static/js/main.1da96cb0.js"
+    "static/css/main.c98076f9.css",
+    "static/js/main.a7c56d6d.js"
   ]
 }
