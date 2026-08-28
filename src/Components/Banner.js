@@ -1,5 +1,4 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import useReveal from "../hooks/useReveal";
@@ -10,42 +9,6 @@ export default function Banner() {
   const [contentRef, contentClass] = useReveal({ threshold: 0.05 });
   const [dividerRef, dividerClass] = useReveal({ threshold: 0.4 });
   const parallaxRef = useParallax(14);
-  const toRotate = ["Hi There!!", "I'm Shashwat Shah!"];
-  const [loopNo, setLoopNo] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-  const [text, setText] = useState("");
-  const period = 2000;
-  const [delta, setDelta] = useState(300 - Math.random() * 100);
-  useEffect(() => {
-    let ticker = setInterval(() => {
-      tick();
-    }, delta);
-    return () => {
-      clearInterval(ticker);
-    };
-  }, [text]);
-
-  const tick = () => {
-    let i = loopNo % toRotate.length;
-    let fullText = toRotate[i];
-    let updatedText = deleting
-      ? fullText.substring(0, text.length - 1)
-      : fullText.substring(0, text.length + 1);
-    setText(updatedText);
-
-    if (deleting) {
-      setDelta(100);
-    }
-
-    if (!deleting && updatedText === fullText) {
-      setDeleting(true);
-      setDelta(period);
-    } else if (deleting && updatedText === "") {
-      setDeleting(false);
-      setLoopNo(loopNo + 1);
-      setDelta(200);
-    }
-  };
   return (
     <section
       ref={parallaxRef}
@@ -62,11 +25,12 @@ export default function Banner() {
                 </div>
               </div>
               <span className="tagline">Shashwat Nimesh Shah · Computer Engineer</span>
-              <h1 aria-label="Shashwat Nimesh Shah, Computer Engineer at New York University">
-                <span className="wrap">{text}</span>
+              <h1 aria-label="Oh, hey there!">
+                <span className="hero-headline-accent">Oh, hey there!</span>
               </h1>
               <p className="mx-auto">
-                From studying in Mumbai to working in New York, I've charted a path through Software Development, IoT, and AI/ML—refined across 6 internships, including an Automation Developer Internship at UiPath, 4 research papers, and 3 patents. I am now pursuing my Master's in Computer Engineering at New York University. Nice to meet you :)
+                From studying in Mumbai to working in New York, I've charted a path through Software Development, IoT, and AI/ML - refined across 6 internships, 4 research papers, and 3 patents. I am now pursuing my Master's in Computer Engineering at New York University. <br/>
+                Nice to meet you :)
               </p>
               <a href="mailto:shashwatshah02@gmail.com">
                 <button className="btn-antique">

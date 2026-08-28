@@ -342,6 +342,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: block;
   color: var(--color-ink);
 }
+.hero-headline-accent {
+  color: var(--color-bronze-dark);
+  font-style: italic;
+}
 .banner p {
   color: var(--color-muted-on-light);
   font-family: var(--font-sans);

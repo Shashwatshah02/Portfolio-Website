@@ -31,6 +31,7 @@ import spinnerClawImage from "../assets/img/spinnerClawImage.jpg"
 import mealieCard from "../assets/img/mealie-recommender-project-color.png"
 import dnaStorageCard from "../assets/img/dna-storage-project-color.png"
 import uipathCard from "../assets/img/uipath-official-logo.png"
+import voiceAgentCard from "../assets/img/voice-agent-poc.png"
 
 
 
@@ -40,6 +41,22 @@ import { IconVaccine } from "@tabler/icons-react";
 import useReveal from "../hooks/useReveal";
 
 const cardData = [
+  {
+    header: "Current AI Systems Project",
+    title: "Cascaded Real-Time Voice Agent",
+    text: "Built a browser-based, multi-turn voice agent that turns speech into intelligent spoken responses through a modular STT → LLM → guardrail → TTS pipeline.",
+    listItems: [
+      "Integrated ElevenLabs Scribe and TTS with interchangeable Claude, OpenAI, mock, and future UiPath LLM backends.",
+      "Implemented server-side conversation memory, latency instrumentation, secure configuration, and audio-first HTTP APIs.",
+      "Streamed LLM output sentence by sentence into speech, reducing measured time to first audio by roughly 35%.",
+    ],
+    buttonText: "View Source Code",
+    buttonIcon: "🎙️",
+    buttonLink: "https://github.com/Shashwatshah02/voice-agent-poc",
+    tags: ["#VoiceAI", "#TypeScript", "#ElevenLabs", "#OpenAI", "#Claude", "#Streaming", "#ConversationalAI"],
+    imageUrl: voiceAgentCard,
+    imageClass: "project-card-img-color",
+  },
   {
     header: "Personal MLOps Project",
     title: "Mealie Recipe Recommender",
