@@ -126,8 +126,8 @@ export function InternshipJourney() {
       side: "left",
       date: "Next destination",
       title: "The Full-Time Chapter",
-      subtitle: "New York · Open to opportunities",
-      description: "Seeking a full-time software engineering role where I can build meaningful products, solve ambitious problems, and keep learning with a great team.",
+      subtitle: "Open to opportunities",
+      description: "Seeking a full-time SWE/ AIML role where I can build meaningful products, solve ambitious problems, and keep learning with a great team.",
     },
     ...internshipData.map((item, index) => ({
       ...item,

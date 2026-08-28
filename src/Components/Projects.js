@@ -28,9 +28,9 @@ import sociopedia from "../assets/img/sociopedia.jpg"
 import pipelineRobotImage from "../assets/img/pipelineRobotImage.jpg"
 import whatsappWebLogger from "../assets/img/whatsappWebLogger.jpg"
 import spinnerClawImage from "../assets/img/spinnerClawImage.jpg"
-import mealieCard from "../assets/img/mealie-card.svg"
-import dnaStorageCard from "../assets/img/dna-storage-card.svg"
-import uipathCard from "../assets/img/uipath-card.svg"
+import mealieCard from "../assets/img/mealie-recommender-project-color.png"
+import dnaStorageCard from "../assets/img/dna-storage-project-color.png"
+import uipathCard from "../assets/img/uipath-official-logo.png"
 
 
 
@@ -55,6 +55,7 @@ const cardData = [
     buttonLink: "https://github.com/Shashwatshah02/mealie_als_training",
     tags: ["#MachineLearning", "#ALS", "#MLflow", "#Docker", "#RecommenderSystem", "#ChameleonCloud", "#PostgreSQL"],
     imageUrl: mealieCard,
+    imageClass: "project-card-img-color",
   },
   {
     header: "Published Research Paper - IEEE ICRETM",
@@ -70,6 +71,7 @@ const cardData = [
     buttonLink: "https://github.com/Shashwatshah02/DNA_Storage",
     tags: ["#DNAStorage", "#Research", "#ErrorCorrection", "#DataStorage", "#IEEE"],
     imageUrl: dnaStorageCard,
+    imageClass: "project-card-img-color",
   },
   {
     header: "UiPath Internship - Automation Developer",
@@ -83,6 +85,7 @@ const cardData = [
     ],
     tags: ["#UiPath", "#RPA", "#AgenticAI", "#DocumentUnderstanding", "#DataFabric", "#React", "#TypeScript"],
     imageUrl: uipathCard,
+    imageClass: "project-card-img-logo",
   },
   {
     header: "Patented Project (202521045231)",
@@ -411,7 +414,9 @@ function ProjectCard({ card, index }) {
         <Card.Img
           variant="top"
           src={card.imageUrl}
-          className="project-card-img"
+          alt={`${card.title} by Shashwat Shah`}
+          loading={index < 3 ? "eager" : "lazy"}
+          className={`project-card-img ${card.imageClass || ""}`}
         />
         <Card.Body className="text-center">
           <Card.Title className="project-card-title">

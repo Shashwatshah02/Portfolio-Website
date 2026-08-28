@@ -10,7 +10,7 @@ export default function Banner() {
   const [contentRef, contentClass] = useReveal({ threshold: 0.05 });
   const [dividerRef, dividerClass] = useReveal({ threshold: 0.4 });
   const parallaxRef = useParallax(14);
-  const toRotate = ["Hi There!!", "I'm Shashwat Shah!'"];
+  const toRotate = ["Hi There!!", "I'm Shashwat Shah!"];
   const [loopNo, setLoopNo] = useState(0);
   const [deleting, setDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -61,12 +61,12 @@ export default function Banner() {
                   <span />
                 </div>
               </div>
-              <span className="tagline">Charting my story, beyond the screen</span>
-              <h1>
-                '<span className="wrap">{text}</span>
+              <span className="tagline">Shashwat Nimesh Shah · Computer Engineer</span>
+              <h1 aria-label="Shashwat Nimesh Shah, Computer Engineer at New York University">
+                <span className="wrap">{text}</span>
               </h1>
               <p className="mx-auto">
-                From studying in Mumbai to working in New York, I've charted a path through Software Development, IoT, and AI/ML -  refined across 6 internships, 4 research papers, and 3 patents. Now pursuing my Computer Engineering Master's at New York University. Nice to meet you :)
+                From studying in Mumbai to working in New York, I've charted a path through Software Development, IoT, and AI/ML—refined across 6 internships, including an Automation Developer Internship at UiPath, 4 research papers, and 3 patents. I am now pursuing my Master's in Computer Engineering at New York University. Nice to meet you :)
               </p>
               <a href="mailto:shashwatshah02@gmail.com">
                 <button className="btn-antique">

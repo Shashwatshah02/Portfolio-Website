@@ -21,16 +21,16 @@ export default function Footer() {
                 Shashwat Shah<span className="dot">.</span>
               </span>
               <div className="social-icon mt-4 justify-content-center d-flex">
-                <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/">
+                <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/" rel="me" aria-label="Shashwat Shah on LinkedIn">
                   <Linkedin size={16} />
                 </a>
-                <a href="https://github.com/Shashwatshah02">
+                <a href="https://github.com/Shashwatshah02" rel="me" aria-label="Shashwat Shah on GitHub">
                   <Github size={16} />
                 </a>
-                <a href="https://www.instagram.com/shashwatshah02/">
+                <a href="https://www.instagram.com/shashwatshah02/" rel="me" aria-label="Shashwat Shah on Instagram">
                   <Instagram size={16} />
                 </a>
-                <a href="mailto:shashwatshah02@gmail.com">
+                <a href="mailto:shashwatshah02@gmail.com" aria-label="Email Shashwat Shah">
                   <EnvelopeFill size={16} />
                 </a>
               </div>

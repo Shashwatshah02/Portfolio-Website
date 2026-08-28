@@ -434,7 +434,20 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 14px 16px;
 }
 .project-card-img {
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   filter: sepia(0.45) saturate(0.65) contrast(0.96) brightness(1.02);
+}
+.project-card-img-color,
+.project-card-img-logo {
+  filter: none;
+}
+.project-card-img-logo {
+  padding: 54px 42px;
+  box-sizing: border-box;
+  object-fit: contain;
+  background: #ffffff;
 }
 .project-card-title {
   font-family: var(--font-serif);
@@ -450,6 +463,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 100%;
   font-size: 15px;
   line-height: 1.6em;
+}
+.project .project-card-text {
+  width: 100%;
+  margin: 0;
+  text-align: left;
 }
 .project-card .list-group-item {
   color: var(--color-ink-faint);

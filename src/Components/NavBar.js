@@ -99,13 +99,13 @@ export default function NavBar() {
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/">
+              <a href="https://www.linkedin.com/in/shashwat-shah-391abb204/" rel="me" aria-label="Shashwat Shah on LinkedIn">
                 <Linkedin size={16} />
               </a>
-              <a href="https://github.com/Shashwatshah02">
+              <a href="https://github.com/Shashwatshah02" rel="me" aria-label="Shashwat Shah on GitHub">
                 <Github size={16} />
               </a>
-              <a href="https://www.instagram.com/shashwatshah02/">
+              <a href="https://www.instagram.com/shashwatshah02/" rel="me" aria-label="Shashwat Shah on Instagram">
                 <Instagram size={16} />
               </a>
             </div>
