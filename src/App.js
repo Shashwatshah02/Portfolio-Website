@@ -5,19 +5,20 @@ import Banner from "./Components/Banner";
 import CustomCursor from "./Components/CustomCursor";
 import Footer from "./Components/Footer";
 import NavBar from "./Components/NavBar";
+import Preloader from "./Components/Preloader";
 import Projects from "./Components/Projects";
-import Skills from "./Components/Skills";
-import Timeline from "./Components/Timeline";
+import { EducationTimeline, InternshipJourney } from "./Components/Timeline";
 
 function App() {
   return (
     <div className="App">
+      <Preloader />
       <CustomCursor />
       <NavBar />
       <Banner />
-      <Skills />
+      <EducationTimeline />
       <MyBentoGrid />
-      <Timeline />
+      <InternshipJourney />
       <Projects />
       <Footer />
     </div>

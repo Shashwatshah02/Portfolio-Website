@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import useReducedMotion from "../hooks/useReducedMotion";
 import "./CustomCursor.css";
 
-const INTERACTIVE_SELECTOR = "a, button, input, textarea, .btn-antique";
+const INTERACTIVE_SELECTOR =
+  "a, button, input, textarea, select, [role='button'], .btn-antique";
 
 export default function CustomCursor() {
   const [enabled, setEnabled] = useState(false);
@@ -10,56 +11,77 @@ export default function CustomCursor() {
   const reducedMotion = useReducedMotion();
 
   useEffect(() => {
-    const isCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
-    setEnabled(!isCoarsePointer && !reducedMotion);
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const updateEnabled = () => setEnabled(finePointer.matches && !reducedMotion);
+
+    updateEnabled();
+    finePointer.addEventListener?.("change", updateEnabled);
+    return () => finePointer.removeEventListener?.("change", updateEnabled);
   }, [reducedMotion]);
 
   useEffect(() => {
-    if (!enabled) return;
+    if (!enabled) return undefined;
+
+    const cursor = cursorRef.current;
+    if (!cursor) return undefined;
 
     document.body.classList.add("cursor-active");
 
-    let cursorX = window.innerWidth / 2;
-    let cursorY = window.innerHeight / 2;
-    let targetX = cursorX;
-    let targetY = cursorY;
-    let raf;
+    let targetX = -40;
+    let targetY = -40;
+    let ringX = targetX;
+    let ringY = targetY;
+    let raf = 0;
 
-    const onMove = (e) => {
-      targetX = e.clientX;
-      targetY = e.clientY;
-    };
+    const render = () => {
+      // The dot is exact; only the decorative ring has a short, polished glide.
+      cursor.style.setProperty("--cursor-x", `${targetX}px`);
+      cursor.style.setProperty("--cursor-y", `${targetY}px`);
+      ringX += (targetX - ringX) * 0.45;
+      ringY += (targetY - ringY) * 0.45;
+      cursor.style.setProperty("--ring-x", `${ringX}px`);
+      cursor.style.setProperty("--ring-y", `${ringY}px`);
 
-    const onOver = (e) => {
-      if (e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
-        cursorRef.current && cursorRef.current.classList.add("cursor-arrow-active");
+      if (Math.abs(targetX - ringX) > 0.1 || Math.abs(targetY - ringY) > 0.1) {
+        raf = requestAnimationFrame(render);
+      } else {
+        raf = 0;
       }
     };
-    const onOut = (e) => {
-      if (e.target.closest && e.target.closest(INTERACTIVE_SELECTOR)) {
-        cursorRef.current && cursorRef.current.classList.remove("cursor-arrow-active");
-      }
+
+    const requestRender = () => {
+      if (!raf) raf = requestAnimationFrame(render);
     };
 
-    const tick = () => {
-      cursorX += (targetX - cursorX) * 0.18;
-      cursorY += (targetY - cursorY) * 0.18;
-      if (cursorRef.current) {
-        cursorRef.current.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0)`;
-      }
-      raf = requestAnimationFrame(tick);
+    const onMove = (event) => {
+      targetX = event.clientX;
+      targetY = event.clientY;
+      cursor.classList.add("custom-cursor-visible");
+      cursor.classList.toggle(
+        "custom-cursor-interactive",
+        Boolean(event.target.closest?.(INTERACTIVE_SELECTOR))
+      );
+      requestRender();
     };
 
-    window.addEventListener("mousemove", onMove, { passive: true });
-    document.addEventListener("mouseover", onOver);
-    document.addEventListener("mouseout", onOut);
-    raf = requestAnimationFrame(tick);
+    const onLeave = () => cursor.classList.remove("custom-cursor-visible");
+    const onEnter = () => cursor.classList.add("custom-cursor-visible");
+    const onDown = () => cursor.classList.add("custom-cursor-pressed");
+    const onUp = () => cursor.classList.remove("custom-cursor-pressed");
+
+    window.addEventListener("pointermove", onMove, { passive: true });
+    document.addEventListener("pointerleave", onLeave);
+    document.addEventListener("pointerenter", onEnter);
+    window.addEventListener("pointerdown", onDown, { passive: true });
+    window.addEventListener("pointerup", onUp, { passive: true });
 
     return () => {
       document.body.classList.remove("cursor-active");
-      window.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseover", onOver);
-      document.removeEventListener("mouseout", onOut);
+      window.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerleave", onLeave);
+      document.removeEventListener("pointerenter", onEnter);
+      window.removeEventListener("pointerdown", onDown);
+      window.removeEventListener("pointerup", onUp);
       cancelAnimationFrame(raf);
     };
   }, [enabled]);
@@ -67,22 +89,9 @@ export default function CustomCursor() {
   if (!enabled) return null;
 
   return (
-    <svg
-      ref={cursorRef}
-      className="custom-cursor-arrow"
-      width="30"
-      height="38"
-      viewBox="0 0 30 38"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        className="cursor-arrow-body"
-        d="M3 2.5 5.5 31l7.7-8.3 6 12.3 6.2-3-6.1-12.3 10.2-.8L3 2.5Z"
-        strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path className="cursor-arrow-ornament" d="m10.6 14.5 2.1 2.1-2.1 2.1-2.1-2.1 2.1-2.1Z" />
-    </svg>
+    <div ref={cursorRef} className="custom-cursor" aria-hidden="true">
+      <span className="custom-cursor-ring" />
+      <span className="custom-cursor-dot" />
+    </div>
   );
 }

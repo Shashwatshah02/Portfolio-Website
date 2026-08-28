@@ -6,6 +6,7 @@ import useReveal from "../hooks/useReveal";
 export default function Footer() {
   const [dividerRef, dividerClass] = useReveal({ threshold: 0.4 });
   const [contentRef, contentClass] = useReveal({ threshold: 0.2 });
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="footer grain-overlay grain-overlay-dark">
@@ -33,7 +34,7 @@ export default function Footer() {
                   <EnvelopeFill size={16} />
                 </a>
               </div>
-              <p>CopyRight @ 2025. Shashwat Shah (All Rights Reserved)</p>
+              <p>Copyright © {currentYear} Shashwat Shah. All rights reserved.</p>
             </div>
           </Col>
         </Row>

@@ -1,10 +1,5 @@
 import React from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
 import "./Timeline.css";
 
 const educationData = [
@@ -90,29 +85,20 @@ const internshipData = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: 0.2 * i, duration: 0.6, ease: "easeOut" },
-  }),
-};
-
-function EducationTimeline() {
+export function EducationTimeline() {
   return (
     <section id="education" className="education-section grain-overlay">
       <div className="education-heading">
         <span className="section-eyebrow">Education</span>
         <h2>Built on curiosity</h2>
-        <p>Hover over a milestone to uncover the full story.</p>
+        <p>Four milestones that shaped the path I am on today.</p>
       </div>
 
       <div className="education-scroll" aria-label="Education timeline">
         <ol className="education-track">
           {educationData.map((item, index) => (
             <li key={item.title} className="education-milestone">
-              <article className="education-card" tabIndex="0">
+              <article className="education-card">
                 <span className="education-marker" aria-hidden="true" />
                 <time>{item.date}</time>
                 <h3>{item.title}</h3>
@@ -130,46 +116,80 @@ function EducationTimeline() {
   );
 }
 
-function TimelineColumn({ title, items }) {
+export function InternshipJourney() {
   const shouldReduceMotion = useReducedMotion();
+  const mapStops = [
+    {
+      type: "goal",
+      x: 72,
+      y: 12,
+      side: "left",
+      date: "Next destination",
+      title: "The Full-Time Chapter",
+      subtitle: "New York · Open to opportunities",
+      description: "Seeking a full-time software engineering role where I can build meaningful products, solve ambitious problems, and keep learning with a great team.",
+    },
+    ...internshipData.map((item, index) => ({
+      ...item,
+      type: "role",
+      number: internshipData.length - index,
+      x: [20, 78, 17, 82, 18, 79, 42][index],
+      y: [21, 31, 41, 51, 62, 73, 84][index],
+      side: ["right", "left", "right", "left", "right", "left", "right"][index],
+    })),
+    {
+      type: "start",
+      x: 70,
+      y: 94,
+      side: "left",
+      date: "Where it began",
+      title: "Start",
+      subtitle: "Curiosity set the course",
+      description: "The first step: learning to turn ideas into things people can use.",
+    },
+  ];
+
   return (
-    <div className="timeline-column">
-      <h2 className="timeline-title">{title}</h2>
-      <VerticalTimeline lineColor="rgba(28, 23, 18, 0.2)">
-        {items.map((item, index) => (
-          <VerticalTimelineElement
-            key={index}
-            date={item.date}
-            icon={<div className="emoji-icon"><span className="icon-dot" /></div>}
-            iconStyle={{
-              background: "#f6efe0",
-              boxShadow: "none",
-            }}
-            contentStyle={{
-              background: "transparent",
-              boxShadow: "none",
-              padding: 0,
-            }}
-            contentArrowStyle={{ display: "none" }}
+    <section id="experience" className="journey-section grain-overlay">
+      <div className="journey-heading">
+        <span className="section-eyebrow">Experience</span>
+        <h2>The map so far</h2>
+        <p>Follow the trail backwards—from the destination I’m pursuing to where the adventure began.</p>
+      </div>
+
+      <div className="treasure-map">
+        <svg className="treasure-map-art" viewBox="0 0 1000 1600" preserveAspectRatio="none" aria-hidden="true">
+          <path
+            className="treasure-trail"
+            d="M700 1504 C680 1460 760 1420 650 1390 L540 1370 Q470 1355 420 1344 C320 1320 300 1270 380 1240 L640 1200 Q740 1180 790 1168 C850 1140 810 1090 690 1070 L300 1020 Q210 1005 180 992 C120 970 130 920 260 890 L680 840 Q780 825 820 816 C880 800 830 750 700 720 L300 680 Q210 660 170 656 C110 640 120 590 260 560 L650 510 Q740 498 780 496 C850 490 800 430 690 410 L320 355 Q230 340 200 336 C140 325 150 285 260 260 L560 210 Q660 195 720 192"
+          />
+        </svg>
+
+        {mapStops.map((stop, index) => (
+          <motion.div
+            key={`${stop.type}-${stop.title}-${stop.subtitle}`}
+            className={`map-stop map-stop-${stop.type} map-stop-${stop.side} ${stop.subtitle === "Designscape" ? "map-stop-designscape" : ""}`}
+            style={{ "--stop-x": `${stop.x}%`, "--stop-y": `${stop.y}%` }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18, rotate: stop.side === "left" ? 1 : -1 }}
+            whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.5, delay: shouldReduceMotion ? 0 : Math.min(index * 0.04, 0.25) }}
           >
-            <motion.div
-              className="timeline-card"
-              variants={cardVariants}
-              initial={shouldReduceMotion ? false : "hidden"}
-              whileInView={shouldReduceMotion ? undefined : "visible"}
-              viewport={{ once: true }}
-              custom={index}
-            >
-              <h3>{item.title}</h3>
-              <p className="timeline-subtitle">{item.subtitle}</p>
-              {item.description && (
-                <p className="timeline-description">{item.description}</p>
-              )}
-            </motion.div>
-          </VerticalTimelineElement>
+            <span className="map-landmark" aria-hidden="true">
+              {stop.type === "goal" ? "×" : stop.type === "start" ? "⚑" : stop.number}
+            </span>
+            <article className="map-note" tabIndex="0">
+              <time>{stop.date}</time>
+              <h3>{stop.type === "role" ? stop.subtitle : stop.title}</h3>
+              <p className="map-company">{stop.type === "role" ? stop.title : stop.subtitle}</p>
+              <p className="map-description">{stop.description}</p>
+            </article>
+          </motion.div>
         ))}
-      </VerticalTimeline>
-    </div>
+
+        <span className="map-inscription" aria-hidden="true">The path is still being drawn.</span>
+      </div>
+    </section>
   );
 }
 
@@ -177,9 +197,7 @@ export default function Timeline() {
   return (
     <>
       <EducationTimeline />
-      <section className="timeline-section grain-overlay">
-        <TimelineColumn title="Internships" items={internshipData} />
-      </section>
+      <InternshipJourney />
     </>
   );
 }

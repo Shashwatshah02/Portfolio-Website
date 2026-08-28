@@ -132,8 +132,8 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 nav.navbar .navbar-nav .nav-link.navbar-link::after {
   content: "";
   position: absolute;
-  left: 22px;
-  right: 22px;
+  left: 32px;
+  right: 32px;
   bottom: 2px;
   height: 1px;
   background: var(--color-bronze);

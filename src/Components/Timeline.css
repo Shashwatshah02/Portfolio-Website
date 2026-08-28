@@ -4,6 +4,332 @@
   position: relative;
 }
 
+/* Experience — treasure map */
+.journey-section {
+  padding: 118px 20px 120px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-parchment);
+}
+
+.journey-heading {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+}
+
+.journey-heading .section-eyebrow {
+  margin-bottom: 13px;
+}
+
+.journey-heading h2 {
+  margin: 0;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: clamp(40px, 5vw, 58px);
+  font-weight: 600;
+}
+
+.journey-heading p {
+  margin: 15px 0 0;
+  color: var(--color-muted-on-light);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.treasure-map {
+  width: min(100%, 1280px);
+  height: auto;
+  aspect-ratio: 2 / 3;
+  margin: 0 auto;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: url("../assets/img/experience-treasure-map-v2.png") center / 100% 100% no-repeat;
+  filter: drop-shadow(0 22px 24px rgba(112, 79, 38, 0.18));
+}
+
+.treasure-map::before {
+  display: none;
+}
+
+.treasure-map-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.treasure-trail {
+  fill: none;
+  stroke: #6f321d;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 18 14;
+  filter: drop-shadow(0 1px 0 rgba(246, 239, 224, 0.38));
+}
+
+.map-coast,
+.map-contour,
+.map-wave,
+.map-mountains {
+  fill: none;
+  stroke: rgba(112, 79, 38, 0.34);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.map-coast { stroke-dasharray: 5 7; }
+.map-contour { stroke-width: 1.5; }
+.map-wave { stroke-width: 2.5; }
+.map-mountains { stroke: rgba(28, 23, 18, 0.24); }
+
+.map-compass {
+  position: absolute;
+  z-index: 3;
+  top: 42px;
+  left: 48px;
+  width: 118px;
+  height: 118px;
+  border: 1px solid rgba(28, 23, 18, 0.46);
+  border-radius: 50%;
+  color: var(--color-ink);
+  font-family: var(--font-serif);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.map-compass::before,
+.map-compass::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  right: 12px;
+  height: 1px;
+  background: rgba(28, 23, 18, 0.38);
+}
+
+.map-compass::after { transform: rotate(90deg); }
+
+.map-compass > span:not(.compass-needle) { position: absolute; }
+.compass-n { top: 5px; left: 50%; transform: translateX(-50%); }
+.compass-e { right: 8px; top: 50%; transform: translateY(-50%); }
+.compass-s { bottom: 5px; left: 50%; transform: translateX(-50%); }
+.compass-w { left: 7px; top: 50%; transform: translateY(-50%); }
+
+.compass-needle {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  width: 2px;
+  height: 68px;
+  background: linear-gradient(to bottom, var(--color-bronze-dark) 0 48%, var(--color-ink) 48% 100%);
+  clip-path: polygon(50% 0, 100% 45%, 60% 45%, 60% 100%, 40% 100%, 40% 45%, 0 45%);
+  transform: translateX(-50%) rotate(21deg);
+  transform-origin: center;
+}
+
+.map-stop {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  top: var(--stop-y);
+  left: var(--stop-x);
+  z-index: 3;
+}
+
+.map-stop:hover,
+.map-stop:focus-within {
+  z-index: 12;
+}
+
+.map-landmark {
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  top: -21px;
+  left: -21px;
+  display: grid;
+  place-items: center;
+  color: #f2dfb4;
+  background: #71331f;
+  border: 2px solid #e4c98e;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #71331f, 2px 4px 7px rgba(28, 23, 18, 0.28);
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.map-stop-goal .map-landmark {
+  width: 58px;
+  height: 58px;
+  top: -29px;
+  left: -29px;
+  color: #652817;
+  background: rgba(239, 218, 174, 0.82);
+  border: 2px dashed #71331f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px rgba(239, 218, 174, 0.48), 2px 4px 8px rgba(71, 39, 20, 0.25);
+  font-family: var(--font-serif);
+  font-size: 72px;
+  font-weight: 400;
+  line-height: 0.66;
+  transform: rotate(-9deg);
+}
+
+.map-stop-start .map-landmark {
+  width: 52px;
+  height: 52px;
+  top: -26px;
+  left: -26px;
+  border-radius: 50%;
+  background: var(--color-bronze-dark);
+  font-size: 23px;
+}
+
+.map-note {
+  width: min(320px, 31vw);
+  padding: 8px 10px;
+  box-sizing: border-box;
+  position: absolute;
+  top: -48px;
+  color: var(--color-ink);
+  background: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+  text-shadow: 0 1px rgba(246, 239, 224, 0.45);
+  transform: rotate(-0.6deg);
+  transition: padding 220ms ease, background-color 220ms ease, border-color 220ms ease,
+    box-shadow 220ms ease, transform 220ms ease;
+  outline: none;
+  isolation: isolate;
+}
+
+.map-note::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -10px -18px;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(239, 218, 174, 0.98) 0%,
+    rgba(239, 218, 174, 0.88) 48%,
+    rgba(239, 218, 174, 0.42) 68%,
+    transparent 82%
+  );
+  transition: opacity 180ms ease;
+}
+
+.map-stop-right .map-note {
+  left: 27px;
+}
+
+.map-stop-left .map-note {
+  right: 27px;
+  transform: rotate(0.6deg);
+}
+
+.map-stop:hover .map-note,
+.map-stop:focus-within .map-note {
+  padding: 16px 18px;
+  background: rgba(239, 218, 174, 0.97);
+  border-color: rgba(71, 39, 20, 0.62);
+  box-shadow: 5px 7px 0 rgba(91, 49, 25, 0.2), 0 14px 24px rgba(28, 23, 18, 0.2);
+  text-shadow: none;
+  transform: translateY(-5px) rotate(0deg);
+}
+
+.map-stop:hover .map-note::before,
+.map-stop:focus-within .map-note::before {
+  opacity: 0;
+}
+
+.map-stop-goal .map-note {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+  text-shadow:
+    -1px -1px 0 rgba(239, 218, 174, 0.9),
+    1px -1px 0 rgba(239, 218, 174, 0.9),
+    -1px 1px 0 rgba(239, 218, 174, 0.9),
+    1px 1px 0 rgba(239, 218, 174, 0.9),
+    0 0 9px rgba(239, 218, 174, 0.95);
+}
+
+.map-stop-goal:hover .map-note,
+.map-stop-goal:focus-within .map-note {
+  border: 2px solid #4a2918;
+  background: rgba(239, 218, 174, 0.97);
+  box-shadow: 6px 7px 0 rgba(91, 49, 25, 0.22);
+}
+
+.map-note time {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--color-bronze-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.map-note h3 {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #3f2416;
+}
+
+.map-company {
+  margin: 5px 0 0;
+  color: var(--color-ink-faint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.map-description {
+  max-height: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 0;
+  color: var(--color-ink-faint);
+  font-size: 12px;
+  line-height: 1.5;
+  transition: max-height 260ms ease, margin-top 260ms ease, opacity 180ms ease;
+}
+
+.map-stop:hover .map-description,
+.map-stop:focus-within .map-description {
+  max-height: 150px;
+  margin-top: 10px;
+  opacity: 1;
+}
+
+.map-inscription {
+  position: absolute;
+  left: 52px;
+  bottom: 45px;
+  color: rgba(75, 38, 18, 0.76);
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-style: italic;
+  transform: rotate(-2deg);
+}
+
+.map-stop-designscape .map-note,
+.map-stop-start .map-note {
+  text-shadow:
+    -1px -1px 0 rgba(239, 218, 174, 0.88),
+    1px 1px 0 rgba(239, 218, 174, 0.88),
+    0 0 8px rgba(239, 218, 174, 0.95);
+}
+
 /* Education — compact horizontal timeline */
 .education-section {
   padding: 118px 20px 96px;
@@ -67,14 +393,14 @@
 }
 
 .education-card {
-  height: 164px;
+  height: 330px;
   padding: 58px 20px 20px;
   position: relative;
   overflow: hidden;
   cursor: default;
-  background: rgba(246, 239, 224, 0.52);
-  border: 1px solid rgba(28, 23, 18, 0.18);
-  box-shadow: 0 8px 22px rgba(28, 23, 18, 0.05);
+  background: var(--color-parchment);
+  border: 1px solid var(--color-bronze);
+  box-shadow: 0 12px 26px rgba(28, 23, 18, 0.1);
   outline: none;
   transition: height 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1), background-color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
@@ -86,7 +412,7 @@
   z-index: 1;
   width: 15px;
   height: 15px;
-  background: var(--color-parchment-dark);
+  background: var(--color-bronze);
   border: 3px solid var(--color-bronze);
   border-radius: 50%;
   transition: transform 0.35s ease, background-color 0.35s ease;
@@ -120,9 +446,9 @@
 }
 
 .education-details {
-  max-height: 0;
-  margin-top: 0;
-  opacity: 0;
+  max-height: 170px;
+  margin-top: 18px;
+  opacity: 1;
   overflow: hidden;
   transition: max-height 0.35s ease, margin-top 0.35s ease, opacity 0.25s ease;
 }
@@ -146,16 +472,13 @@
 .education-card:focus-visible {
   z-index: 2;
   height: 330px;
-  transform: translateY(-8px) scale(1.035);
-  background: var(--color-parchment);
-  border-color: var(--color-bronze);
-  box-shadow: 0 20px 35px rgba(28, 23, 18, 0.16);
+  transform: translateY(-4px);
+  box-shadow: 0 18px 32px rgba(28, 23, 18, 0.14);
 }
 
 .education-card:hover .education-marker,
 .education-card:focus-visible .education-marker {
-  background: var(--color-bronze);
-  transform: scale(1.16);
+  transform: scale(1.08);
 }
 
 .education-card:hover .education-details,
@@ -258,6 +581,47 @@
     padding: 70px 10px;
   }
 
+  .journey-section {
+    padding: 84px 14px 88px;
+  }
+
+  .journey-heading {
+    margin-bottom: 38px;
+  }
+
+  .treasure-map { height: 1800px; }
+  .treasure-trail { stroke-width: 5; }
+
+  .map-compass {
+    top: 30px;
+    left: 27px;
+    width: 78px;
+    height: 78px;
+    font-size: 9px;
+  }
+
+  .map-compass::before,
+  .map-compass::after { left: 9px; right: 9px; }
+
+  .compass-needle { top: 17px; height: 44px; }
+
+  .map-note {
+    width: min(225px, 60vw);
+    padding: 14px 15px 13px;
+  }
+
+  .map-note h3 { font-size: 18px; }
+  .map-company { font-size: 10px; }
+  .map-description { margin-top: 0; font-size: 10.5px; line-height: 1.4; }
+  .map-stop:hover .map-description,
+  .map-stop:focus-within .map-description { margin-top: 7px; }
+  .map-stop-right .map-note { left: 23px; }
+  .map-stop-left .map-note { right: 23px; }
+  .map-landmark { width: 34px; height: 34px; top: -17px; left: -17px; font-size: 12px; }
+  .map-stop-goal .map-landmark { top: -25px; left: -25px; font-size: 62px; }
+  .map-legend,
+  .map-inscription { display: none; }
+
   .education-section {
     padding: 84px 0 72px;
   }
@@ -282,6 +646,10 @@
   .education-card:focus-visible {
     height: 340px;
     transform: translateY(-4px);
+  }
+
+  .education-card {
+    height: 340px;
   }
 
   .timeline-column {

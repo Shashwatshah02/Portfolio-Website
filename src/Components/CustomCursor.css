@@ -2,44 +2,82 @@ body.cursor-active,
 body.cursor-active a,
 body.cursor-active button,
 body.cursor-active input,
-body.cursor-active textarea {
+body.cursor-active textarea,
+body.cursor-active select,
+body.cursor-active [role="button"] {
   cursor: none;
 }
 
-.custom-cursor-arrow {
+.custom-cursor {
+  --cursor-x: -40px;
+  --cursor-y: -40px;
+  --ring-x: -40px;
+  --ring-y: -40px;
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.custom-cursor-visible {
+  opacity: 1;
+}
+
+.custom-cursor-dot,
+.custom-cursor-ring {
   position: fixed;
   top: 0;
   left: 0;
-  pointer-events: none;
-  z-index: 10000;
-  overflow: visible;
-  transform-origin: 3px 3px;
-  filter: drop-shadow(1px 2px 1px rgba(28, 23, 18, 0.18));
+  display: block;
+  border-radius: 50%;
+  will-change: transform;
 }
 
-.cursor-arrow-body {
-  fill: var(--color-parchment, #f6efe0);
-  stroke: var(--color-ink, #1c1712);
-  transition: fill 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
+.custom-cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--color-ink, #1c1712);
+  box-shadow: 0 0 0 1px rgba(246, 239, 224, 0.65);
+  transform: translate3d(calc(var(--cursor-x) - 3.5px), calc(var(--cursor-y) - 3.5px), 0);
+  transition: width 140ms ease, height 140ms ease, background-color 140ms ease;
 }
 
-.cursor-arrow-ornament {
-  fill: var(--color-bronze, #9c7539);
-  transition: fill 0.2s ease;
+.custom-cursor-ring {
+  width: 28px;
+  height: 28px;
+  border: 1px solid color-mix(in srgb, var(--color-bronze, #9c7539) 82%, transparent);
+  background: color-mix(in srgb, var(--color-parchment, #f6efe0) 8%, transparent);
+  box-shadow: 0 2px 8px rgba(28, 23, 18, 0.08);
+  transform: translate3d(calc(var(--ring-x) - 14px), calc(var(--ring-y) - 14px), 0);
+  transition: width 160ms ease, height 160ms ease, border-color 160ms ease,
+    background-color 160ms ease;
 }
 
-.cursor-arrow-active .cursor-arrow-body {
-  fill: var(--color-bronze, #9c7539);
-  stroke: var(--color-bronze, #9c7539);
-  stroke-width: 2;
+.custom-cursor-interactive .custom-cursor-dot {
+  width: 5px;
+  height: 5px;
+  background: var(--color-parchment, #f6efe0);
+  transform: translate3d(calc(var(--cursor-x) - 2.5px), calc(var(--cursor-y) - 2.5px), 0);
 }
 
-.cursor-arrow-active .cursor-arrow-ornament {
-  fill: var(--color-parchment, #f6efe0);
+.custom-cursor-interactive .custom-cursor-ring {
+  width: 38px;
+  height: 38px;
+  border-color: var(--color-bronze, #9c7539);
+  background: color-mix(in srgb, var(--color-bronze, #9c7539) 75%, transparent);
+  transform: translate3d(calc(var(--ring-x) - 19px), calc(var(--ring-y) - 19px), 0);
 }
 
-@media (max-width: 900px) {
-  .custom-cursor-arrow {
+.custom-cursor-pressed .custom-cursor-ring {
+  width: 22px;
+  height: 22px;
+  transform: translate3d(calc(var(--ring-x) - 11px), calc(var(--ring-y) - 11px), 0);
+}
+
+@media (max-width: 900px), (hover: none), (pointer: coarse) {
+  .custom-cursor {
     display: none;
   }
 }

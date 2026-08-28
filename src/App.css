@@ -202,15 +202,17 @@ nav.navbar.scrolled {
 }
 
 .navbar-wordmark {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  font-size: 26px;
-  letter-spacing: 0.12em;
-  color: var(--color-ink);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
-.navbar-wordmark .dot {
-  color: var(--color-bronze);
+.navbar-seal {
+  width: 46px;
+  height: 46px;
+  transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.navbar-wordmark:hover .navbar-seal {
+  transform: rotate(8deg);
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
@@ -219,7 +221,7 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
   color: var(--color-ink) !important;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 0 22px;
+  padding: 0 32px;
   font-size: 13px;
   opacity: 0.62;
   text-decoration: none;
@@ -254,6 +256,10 @@ span.navbar-text {
   background-color: var(--color-ink);
   color: var(--color-parchment);
   border-color: var(--color-ink);
+}
+.social-icon a:hover svg {
+  color: var(--color-parchment);
+  fill: currentColor;
 }
 
 .navbar-text .btn-antique {
@@ -348,10 +354,27 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .banner .btn-antique {
   margin-left: 0;
 }
+.hero-journey-vignette {
+  width: min(760px, 100%);
+  margin: 48px auto -20px;
+  filter: drop-shadow(0 18px 20px rgba(28, 23, 18, 0.14));
+}
+.hero-journey-vignette img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .banner .hero-ornament {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 640px) {
+  .hero-journey-vignette {
+    width: 112%;
+    margin: 38px -6% -8px;
+  }
 }
 .txt-rotate > .wrap {
   border-right: 0.08em solid var(--color-bronze);
@@ -554,8 +577,9 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   color: var(--color-parchment);
 }
 .footer .social-icon a:hover {
-  background-color: var(--color-parchment);
-  color: var(--color-ink);
+  background-color: var(--color-bronze);
+  color: var(--color-parchment);
+  border-color: var(--color-parchment);
 }
 .footer p {
   font-family: var(--font-sans);

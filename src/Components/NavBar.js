@@ -3,12 +3,15 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useState, useEffect } from "react";
-import { Linkedin, Github, Instagram } from "react-bootstrap-icons";
+import { Linkedin, Github, Instagram, FileEarmarkText } from "react-bootstrap-icons";
+import sealLogo from "../assets/img/sns-seal.svg";
+import ResumeModal from "./ResumeModal";
 
 export default function NavBar() {
   const [active, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
   const [expanded, setExpanded] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
   useEffect(() => {
     const OnScroll = () => {
       if (window.scrollY > 50) {
@@ -39,7 +42,7 @@ export default function NavBar() {
     >
       <Container>
         <Navbar.Brand href="#home" className="me-auto navbar-wordmark">
-          Shashwat<span className="dot">.</span>
+          <img src={sealLogo} alt="Shashwat Nimesh Shah" className="navbar-seal" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav">
           <span className="navbar-toggler-icon"></span>
@@ -70,6 +73,18 @@ export default function NavBar() {
               Education
             </Nav.Link>
             <Nav.Link
+              href="#experience"
+              className={
+                active === "experience" ? "active navbar-link" : "navbar-link"
+              }
+              onClick={() => {
+                activeLink("experience");
+                setExpanded(false);
+              }}
+            >
+              Experience
+            </Nav.Link>
+            <Nav.Link
               href="#projects"
               className={
                 active === "projects" ? "active navbar-link" : "navbar-link"
@@ -94,14 +109,14 @@ export default function NavBar() {
                 <Instagram size={16} />
               </a>
             </div>
-            <a href="mailto:shashwatshah02@gmail.com">
-              <button className="btn-antique">
-                <span>Let's Connect</span>
-              </button>
-            </a>
+            <button className="btn-antique" onClick={() => setResumeOpen(true)}>
+              <FileEarmarkText size={15} />
+              <span>Preview Resume</span>
+            </button>
           </span>
         </Navbar.Collapse>
       </Container>
+      <ResumeModal show={resumeOpen} onClose={() => setResumeOpen(false)} />
     </Navbar>
   );
 }
